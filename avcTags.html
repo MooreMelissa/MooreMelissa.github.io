@@ -35,16 +35,16 @@
         </audio>
 
         <p> Calling a Canvas Tag</p>
-        <canvas id="myCanvas" width="600px" height="330px" style="background:rgba(255,255,255); border: double;"></canvas>
+        <canvas id="mycanvas" width="600px" height="330px" style="background:rgba(255,255,255); border: double;"></canvas>
 
 
         <script>
 
-            var canvas = document.querySelector("canvas");
+            var canvas = document.getElementById("mycanvas");
             var ctx = canvas.getContext("2d");
             ctx.fillStyle = "purple";
             ctx.fillRect(20, 20, 20, 20);
-            ctx.translate(70, 70);
+            ctx.translate(80, 150);
             ctx.fillRect (20, 20, 20, 20);
             ctx.translate(70,70);
             ctx.fillRect (20, 20, 20, 20);
