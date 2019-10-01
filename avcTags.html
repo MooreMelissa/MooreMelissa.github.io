@@ -9,10 +9,7 @@
                 background-color: darkseagreen;
                 color: darkblue;
             }
-            canvas {
-                border: double;
 
-            }
         </style>
 
     </head>
@@ -38,7 +35,7 @@
         </audio>
 
         <p> Calling a Canvas Tag</p>
-        <canvas id="myCanvas" width="600px" height="330px"></canvas>
+        <canvas id="myCanvas" width="600px" height="330px" style="background:rgba(255,255,255); border: double;"></canvas>
 
 
         <script>
@@ -57,12 +54,23 @@
 
 
         </script>
+
+        <canvas id="sampleCanvas" width="300" height="300" style="background:rgba(255,174,66); border:3px solid #006400;"></canvas>
+
+        <script>
+            var canvas = document.getElementById("sampleCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.font = "30px Georgia";
+            ctx.fillStyle= "white";
+            ctx.fillText("What's Up", 70, 150);
+        </script>
+
         <canvas id="canvas" style="background:rgba(34,45,23,0,4)"></canvas>
 
         <script>
-            var can = document.getElementById('canvas');
+            var can = document.getElementById("canvas");
             can.height = 400; can.width = 700;
-            var ctx = can.getContext('2d');
+            var ctx = can.getContext("2d");
             var x = 10, y = 100;
 
 
