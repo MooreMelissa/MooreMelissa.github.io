@@ -44,7 +44,6 @@
             var ctx = canvas.getContext("2d");
             ctx.fillStyle = "purple";
             ctx.fillRect(20, 20, 20, 20);
-
             ctx.translate(70, 70);
             ctx.fillRect (20, 20, 20, 20);
             ctx.translate(70,70);
@@ -63,6 +62,32 @@
             ctx.font = "30px Georgia";
             ctx.fillStyle= "white";
             ctx.fillText("What's Up", 70, 150);
+        </script>
+
+         <canvas id="canvs"></canvas>
+
+        <script>
+            var cans = document.getElementById("canvs");
+            canvs.height = 300; canvs.width = 300;
+            var ctx = canvs.getContext("2d");
+
+            // Draw yellow background
+            ctx.beginPath();
+            ctx.fillStyle = "#ff6";
+            ctx.fillRect(0, 0, canvs.width, canvs.height);
+
+            // Draw blue triangle
+            ctx.beginPath();
+            ctx.fillStyle = "blue";
+            ctx.moveTo(20, 20);
+            ctx.lineTo(180, 20);
+            ctx.lineTo(130, 130);
+            ctx.closePath();
+            ctx.fill();
+
+            // Clear part of the canvas
+            ctx.clearRect(10, 10, 120, 100);
+
         </script>
 
         <canvas id="canvas" style="background:rgba(34,45,23,0,4)"></canvas>
@@ -89,6 +114,7 @@
             draw();
 
         </script>
+
 
 
 
