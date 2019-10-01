@@ -96,23 +96,29 @@
             var can = document.getElementById("canvas");
             can.height = 400; can.width = 700;
             var ctx = can.getContext("2d");
+
+            var loop = function() {
             var x = 10, y = 100;
 
 
-            function draw() {
+
+                function draw() {
                 ctx.beginPath();
                 ctx.arc(x, y, 20, 0, 2 * Math.PI);
                 ctx.fillStyle = "pink";
                 ctx.fill();
+
 
                 x += 2;
                 ctx.fillStyle = "rgba(34,45,23,0.4)";
                 ctx.fillRect(0, 0, can.width, can.height);
                 requestAnimationFrame(draw);
 
-            }
+            };
             draw();
+            };
 
+            setInterval(loop, 6000);
         </script>
 
 
