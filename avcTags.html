@@ -4,12 +4,84 @@
         <meta charset="utf-8">
 
 
+        <style>
+            html {
+                background-color: darkseagreen;
+                color: darkblue;
+            }
+            canvas {
+                border: double;
+
+            }
+        </style>
+
     </head>
     <body>
         <h3> HTML Audio, Visual, Canvas Tags</h3>
 
         <h3> Calling Videos from local file and youtube</h3>
+
+        <p>Example from youtube</p>
+
           <iframe width="658" height="370" src="https://www.youtube.com/embed/qRVKFq9qUiQ" ></iframe>
+
+        <p>Example from a local file</p>
+
+         <video  width="320" height="240" controls>
+             <source src=/pictures/video-LenayaSinging.mp4 type="video/mp4">
+
+        </video><br>
+
+        <p> Calling an Audio File</p>
+        <audio src=/pictures/2010-12-28-chapter-28-david-and-goliath-64k-eng.mp3 controls>
+
+        </audio>
+
+        <p> Calling a Canvas Tag</p>
+        <canvas id="myCanvas" width="600px" height="330px"></canvas>
+
+
+        <script>
+
+            var canvas = document.querySelector("canvas");
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = "purple";
+            ctx.fillRect(20, 20, 20, 20);
+
+            ctx.translate(70, 70);
+            ctx.fillRect (20, 20, 20, 20);
+            ctx.translate(70,70);
+            ctx.fillRect (20, 20, 20, 20);
+
+
+
+
+        </script>
+        <canvas id="canvas" style="background:rgba(34,45,23,0,4)"></canvas>
+
+        <script>
+            var can = document.getElementById('canvas');
+            can.height = 400; can.width = 700;
+            var ctx = can.getContext('2d');
+            var x = 10, y = 100;
+
+
+            function draw() {
+                ctx.beginPath();
+                ctx.arc(x, y, 20, 0, 2 * Math.PI);
+                ctx.fillStyle = "pink";
+                ctx.fill();
+
+                x += 2;
+                ctx.fillStyle = "rgba(34,45,23,0.4)";
+                ctx.fillRect(0, 0, can.width, can.height);
+                requestAnimationFrame(draw);
+
+            }
+            draw();
+
+        </script>
+
 
 
     </body>
