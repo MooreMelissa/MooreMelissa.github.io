@@ -35,6 +35,7 @@
         </audio>
 
         <p> Calling a Canvas Tag</p>
+        <p> Using translate() method to make a pattern using purple squares</p>
         <canvas id="mycanvas" width="600px" height="330px" style="background:rgba(255,255,255); border: double;"></canvas>
 
 
@@ -42,17 +43,22 @@
 
             var canvas = document.getElementById("mycanvas");
             var ctx = canvas.getContext("2d");
+
+
             ctx.fillStyle = "purple";
             ctx.fillRect(20, 20, 20, 20);
-            ctx.translate(80, 150);
-            ctx.fillRect (20, 20, 20, 20);
-            ctx.translate(70,70);
-            ctx.fillRect (20, 20, 20, 20);
+            ctx.translate(70, 70);
+            ctx.fillRect(20, 20, 20, 20);
+            ctx.translate(70, 70);
+            ctx.fillRect(20, 20, 20, 20);
+            ctx.translate(70, 70);
+            ctx.fillRect(20, 20, 20, 20, 20);
+            ctx.translate(70, 70);
+            ctx.fillRect(20, 20, 20, 20, 20);
 
 
-
-
-        </script>
+        </script><br>
+        <p>Can place Text on the Canvas</p>
 
         <canvas id="sampleCanvas" width="300" height="300" style="background:rgba(255,174,66); border:3px solid #006400;"></canvas>
 
@@ -62,8 +68,9 @@
             ctx.font = "30px Georgia";
             ctx.fillStyle= "white";
             ctx.fillText("What's Up", 70, 150);
-        </script>
+        </script><br>
 
+        <p>Change canvas background to yellow, draw a triangle, and then show how to Erase part of canvas the shape of a rectangle</p>
          <canvas id="canvs"></canvas>
 
         <script>
@@ -88,8 +95,9 @@
             // Clear part of the canvas
             ctx.clearRect(10, 10, 120, 100);
 
-        </script>
+        </script><br>
 
+        <p>Automating a shape to move along a line</p>
         <canvas id="canvas" style="background:rgba(34,45,23,0,4)"></canvas>
 
         <script>
