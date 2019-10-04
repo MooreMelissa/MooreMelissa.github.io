@@ -22,17 +22,28 @@
 
           <iframe width="658" height="370" src="https://www.youtube.com/embed/qRVKFq9qUiQ" ></iframe>
 
+
         <p>Example from a local file</p>
 
-         <video  width="320" height="240" controls>
-             <source src=/pictures/video-LenayaSinging.mp4 type="video/mp4">
+        <p>This video is on autoplay, muted and will also loop back to beginning of video to start over when video is finished. The user can't control it because no controls were given</p>
+        <video width="300" height="300" autoplay muted loop src=/pictures/video-baby%20(1).mp4></video>
 
+         <p>This video is loaded with controls so user can play video when ready</p>
+        <video  width="320" height="240" controls>
+             <source src=/pictures/video-LenayaSinging.mp4 type="video/mp4">
         </video><br>
+
+        <p>This video has controls for user, but when video is ended it will start over again</p>
+
+         <video width="200" height="200" controls loop>
+            <source src=/pictures/video-grandbabies.mp4 type="video/mp4">
+        </video>
 
         <p> Calling an Audio File</p>
         <audio src=/pictures/2010-12-28-chapter-28-david-and-goliath-64k-eng.mp3 controls>
 
         </audio>
+
 
         <p> Calling a Canvas Tag</p>
         <p> Using translate() method to make a pattern using purple squares</p>
