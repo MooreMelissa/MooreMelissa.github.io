@@ -24,6 +24,15 @@ h1 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     color: #003366;
 }
+.column {
+    float: left;
+    width: 50%;
+}
+.row:after {
+    content:"";
+    display: table;
+    clear: both;
+}
 p {
     font-size: 1.5em;
     line-height: 1.4em;
