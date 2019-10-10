@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+            <style>
+                html {
+
+                    background-color: skyblue;
+                    color: navy
+                }
+                .button {
+                    background-color: white;
+                    border: 2px solid navy;
+                    color: navy;
+                    text-align: center;
+                    font-size: 14px;
+                    padding: 16px;
+                }
+                .output {
+                    font-size: 26px;
+                    color: crimson;
+                }
+
+            </style>
+
+    </head>
+    <body>
+
+        <h3> Guess My Number!</h3>
+        <h3>It's between 1 and 30</h3>
+
+        <script type="text/javascript">
+
+            function numberGuess() {
+
+                var myNumber = 24;
+                var userGuess = parseInt(document.getElementById('guessBox').value);
+                var answered;
+
+                    if (userGuess < myNumber) answered = "Higher";
+                    if (userGuess > myNumber) answered = "Lower";
+                    if (userGuess == myNumber) answered = "Amazing, you guessed my Number!";
+
+                document.getElementById('outputDiv').innerHTML = answered;
+            }
+        </script>
+
+        <input type="text" class="button" id="guessBox">
+        <button type="button" class="button" onclick="numberGuess()">What's Your Guess?</button><br><br>
+        <div class="output" id="outputDiv"></div>
+
+
+    </body>
+
+
+</html>
