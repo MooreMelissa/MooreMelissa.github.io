@@ -37,8 +37,8 @@
                 var userGuess = parseInt(document.getElementById('guessBox').value);
                 var answered;
 
-                    if (userGuess < myNumber) answered = "Higher";
-                    if (userGuess > myNumber) answered = "Lower";
+                    if (userGuess < myNumber) answered = "Good guess, but my number is Higher";
+                    if (userGuess > myNumber) answered = "Good guess, but my number is Lower";
                     if (userGuess == myNumber) answered = "Amazing, you guessed my Number!";
 
                 document.getElementById('outputDiv').innerHTML = answered;
