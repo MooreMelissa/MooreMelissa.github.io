@@ -103,6 +103,23 @@
               document.getElementById("outputEnd").innerHTML = answer;
             }
 
+            function myArray() {
+                var numbers = [45, 4, 9, 16, 25, 32, 55, 11];
+
+                var over = numbers.filter(myFunction);
+
+
+                document.getElementById("theEnd").innerHTML = over;
+                var seq = over.sort(function(a,b){return a-b});
+                document.getElementById("outputTheEnd").innerHTML = seq;
+
+                function myFunction(value) {
+                    var userNum = parseInt(document.getElementById("overValue").value);
+
+                    return value > userNum;
+                }
+            }
+
         </script>
 
         <input type="text" class="button" id="guessBox">
@@ -145,7 +162,15 @@
         <input type="text" class="button" id="num2">
         <button type="button" class="button" onclick="myExample()">Submit</button><br><br>
 
-        <div id ="outputEnd"></div>
+        <div id ="outputEnd"></div><br><br>
+
+        <h3>Will filter numbers in an Array using user input</h3>
+        <h3>Enter a number between 1-18</h3>
+        <input type-"text" class="button" id="overValue">
+        <button type="button" class="button" onclick="myArray()">Start</button><br>
+        <div id="theEnd"></div><br>
+        <div id="outputTheEnd"></div>
+
     </body>
 
 
