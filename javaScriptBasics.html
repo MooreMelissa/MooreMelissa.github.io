@@ -89,7 +89,19 @@
                 document.getElementById("alert").innerHTML = text;
             }
 
+            function myExample() {
+              var one = parseInt(document.getElementById("num1").value);
+		      var two = parseInt(document.getElementById("num2").value);
+		      var answer;
+		      if (one == two)
+			     answer = (one + " is equal to " + two + ".");
+		      else if (one<two)
+			     answer = (one + " is less than " + two + ".");
+		      else
+			     answer = (one + " is greater than " + two + ".");
 
+              document.getElementById("outputEnd").innerHTML = answer;
+            }
 
         </script>
 
@@ -128,6 +140,12 @@
         <button type="button" class="button" onclick="myBrowser()">Submit</button><br><br>
         <div id="alert"></div>
 
+        <h3>Enter Two Numbers</h3>
+        <input type="text" class="button" id="num1">
+        <input type="text" class="button" id="num2">
+        <button type="button" class="button" onclick="myExample()">Submit</button><br><br>
+
+        <div id ="outputEnd"></div>
     </body>
 
 
