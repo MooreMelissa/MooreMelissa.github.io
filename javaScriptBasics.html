@@ -8,6 +8,11 @@
                     background-color: skyblue;
                     color: navy
                 }
+                select#musicTypes {
+                    color: #fff;
+                    background-color: navy;
+                    font-size: 24px;
+                }
                 .button {
                     background-color: white;
                     border: 2px solid navy;
@@ -34,20 +39,64 @@
             function numberGuess() {
 
                 var myNumber = 24;
-                var userGuess = parseInt(document.getElementById('guessBox').value);
+                var userGuess = parseInt(document.getElementById("guessBox").value);
                 var answered;
 
                     if (userGuess < myNumber) answered = "Good guess, but my number is Higher";
                     if (userGuess > myNumber) answered = "Good guess, but my number is Lower";
                     if (userGuess == myNumber) answered = "Amazing, you guessed my Number!";
 
-                document.getElementById('outputDiv').innerHTML = answered;
+                document.getElementById("outputDiv").innerHTML = answered;
             }
+
+
+            function showChoices() {
+                var numberSelected = 0;
+                var muse = document.getElementById("musicTypes");
+                var result = "<h2>Your Selected Music Types</h2>";
+                result += "<ul>";
+                for (i = 0; i < musicTypes.length; i++) {
+                    currentOption = musicTypes[i];
+                    if (currentOption.selected == true) {
+                        result += "<li>" + currentOption.value + "</li>";
+                    }
+                }
+
+               result += "</ul>";
+               output = document.getElementById("outputList");
+               output.innerHTML = result;
+            }
+
+
         </script>
 
         <input type="text" class="button" id="guessBox">
         <button type="button" class="button" onclick="numberGuess()">What's Your Guess?</button><br><br>
-        <div class="output" id="outputDiv"></div>
+        <div class="output" id="outputDiv"></div><br><br>
+
+        <h2>Use a for loop to examine the list box line by line, checking to see whether the current element has been selected.</h2>
+
+        <form action = ''>
+            <fieldset>
+                <label><h3>Choose some music types (ctrl-click to select multiple lines),<br> then click the Submit button:</h3></label><br>
+                <div class="options">
+                <select id="musicTypes" name="musicTypes" multiple="multiple" size="9">
+                    <option selected="selected" value = "Broadway">Broadway</option>
+                    <option value="Blues">Blues</option>
+                    <option value="Classical">Classical</option>
+                    <option value="New Age">New Age</option>
+                    <option value="Opera">Opera</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Folk">Folk</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Country">Country</option>
+                </select>
+                </div>
+                <button type = "button" onclick = "showChoices()">Submit</button>
+            </fieldset>
+        </form>
+
+        <div id = "outputList"></div>
 
 
     </body>
