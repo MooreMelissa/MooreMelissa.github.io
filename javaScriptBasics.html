@@ -67,12 +67,36 @@
                output.innerHTML = result;
             }
 
+            function myBrowser() {
+                var text;
+                var brow = document.getElementById("browser").value.toUpperCase();
+
+                switch (brow) {
+                    case "EDGE":
+                        text = "You've got the Edge!";
+                        break;
+                    case "CHROME":
+                    case "FIREFOX":
+                    case "SAFARI":
+                    case "OPERA":
+                        text = "Okay, we support this browser";
+                        break;
+                    default:
+                        text = "We hope that this page looks ok!";
+                        break;
+                }
+
+                document.getElementById("alert").innerHTML = text;
+            }
+
+
 
         </script>
 
         <input type="text" class="button" id="guessBox">
         <button type="button" class="button" onclick="numberGuess()">What's Your Guess?</button><br><br>
         <div class="output" id="outputDiv"></div><br><br>
+
 
         <h2>Use a for loop to examine the list box line by line, checking to see whether the current element has been selected.</h2>
 
@@ -96,8 +120,13 @@
             </fieldset>
         </form>
 
-        <div id = "outputList"></div>
+        <div id = "outputList"></div><br><br>
 
+
+        <h3>What browser do you use?</h3>
+        <input type="text" class="button" id="browser">
+        <button type="button" class="button" onclick="myBrowser()">Submit</button><br><br>
+        <div id="alert"></div>
 
     </body>
 
