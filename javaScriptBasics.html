@@ -28,13 +28,7 @@
 
             </style>
 
-    </head>
-    <body>
-
-        <h3> Guess My Number!</h3>
-        <h3>It's between 1 and 30</h3>
-
-        <script type="text/javascript">
+            <script type="text/javascript">
 
             function numberGuess() {
 
@@ -42,9 +36,13 @@
                 var userGuess = parseInt(document.getElementById("guessBox").value);
                 var answered;
 
-                    if (userGuess < myNumber) answered = "Good guess, but my number is Higher";
-                    if (userGuess > myNumber) answered = "Good guess, but my number is Lower";
-                    if (userGuess == myNumber) answered = "Amazing, you guessed my Number!";
+                    if (userGuess == myNumber) {
+                        answered = "Amazing, you guessed my Number!";
+                    } else if (userGuess > myNumber) {
+                        answered = "Good guess, but my number is Lower";
+                    } else {
+                        answered = "Good guess, but my number is Higher";
+                    }
 
                 document.getElementById("outputDiv").innerHTML = answered;
             }
@@ -109,9 +107,9 @@
                 var over = numbers.filter(myFunction);
 
 
-                document.getElementById("theEnd").innerHTML = over;
+                document.getElementById("theEnd").innerHTML = "<h2>Displays filtered array:  </h2>" + over;
                 var seq = over.sort(function(a,b){return a-b});
-                document.getElementById("outputTheEnd").innerHTML = seq;
+                document.getElementById("outputTheEnd").innerHTML = "<h2>Displays same filter list but in ascending order</h2>" + seq;
 
                 function myFunction(value) {
                     var userNum = parseInt(document.getElementById("overValue").value);
@@ -122,12 +120,20 @@
 
         </script>
 
+
+    </head>
+    <body>
+
+        <h2> This example is using a If/else if/else conditional statement </h2>
+        <h3> Guess My Number!</h3>
+        <h3>It's between 1 and 30</h3>
+
         <input type="text" class="button" id="guessBox">
         <button type="button" class="button" onclick="numberGuess()">What's Your Guess?</button><br><br>
         <div class="output" id="outputDiv"></div><br><br>
 
 
-        <h2>Use a for loop to examine the list box line by line, checking to see whether the current element has been selected.</h2>
+        <h2>Use a FOR loop to examine the list box line by line, checking to see whether the current element has been selected.</h2>
 
         <form action = ''>
             <fieldset style="max-width: 550px;">
@@ -151,11 +157,12 @@
 
         <div id = "outputList"></div><br><br>
 
-
+        <h2>This example is using a SWITCH statement</h2>
         <h3>What browser do you use?</h3>
         <input type="text" class="button" id="browser">
         <button type="button" class="button" onclick="myBrowser()">Submit</button><br><br>
         <div id="alert"></div>
+
 
         <h3>Enter Two Numbers</h3>
         <input type="text" class="button" id="num1">
@@ -164,11 +171,14 @@
 
         <div id ="outputEnd"></div><br><br>
 
-        <h3>Will filter numbers in an Array using user input</h3>
+
+        <h2>Will filter numbers in an Array using user input</h2>
         <h3>Enter a number between 1-18</h3>
         <input type="text" class="button" id="overValue">
-        <button type="button" class="button" onclick="myArray()">Start</button><br>
+        <button type="button" class="button" onclick="myArray()">Start</button><br><br>
+
         <div id="theEnd"></div><br>
+
         <div id="outputTheEnd"></div>
 
     </body>
