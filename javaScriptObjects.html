@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Object Oriented JavaScript</title>
+
+        <script type="text/javascript">
+            function Person(fname, lname, age, color) {
+                this.fname = fname;
+                this.lname = lname;
+                this.age = age;
+                this.color = color;
+            }
+            Person.prototype.printPerson = function() {
+                 document.getElementById("output").innerHTML = this.fname +" "+ this.lname +" is "+ this.age +" years old and "+this.color +" is their favorite color";
+                //alert(this.fname+" "+this.lname+" "+this.age+" "+this.color);
+            }
+            function show() {
+                var fname1 = document.getElementById('fname').value;
+                var lname1 = document.getElementById('lname').value;
+                var age1 = document.getElementById('age').value;
+                var color1 = document.getElementById('color').value;
+                var obj = new Person(fname1, lname1, age1, color1);
+                obj.printPerson();
+            }
+
+            class Student{
+                addName(name) {
+                    this.name = name;
+                }
+                addAge(age) {
+                    this.age = age;
+                }
+            }
+
+            class Teacher extends Student {
+                addSubject(subject) {
+                    this.subject = subject;
+                }
+            }
+
+            class Flyer{
+                constructor() {
+                    this.people = [];
+                    this.age =[];
+                }
+                addStudent(student){
+                    this.people.push(student);
+                }
+                addAge(age){
+                    this.people.push(age);
+                }
+            }
+
+            var teacher = new Teacher();
+            teacher.addName("Phil");
+            teacher.addSubject("Math");
+
+            var flyer = new Flyer();
+
+            var student1 = new Student();
+            var student2 = new Student();
+
+            student1.addName("Peter");
+            student1.addAge(22);
+            flyer.addStudent(student1);
+
+            student2.addName("Samuel");
+            student2.addAge(25);
+            flyer.addStudent(student2);
+
+            teacher.addAge(50);
+            flyer.addStudent(teacher);
+
+            function test() {
+                for (i=0; i<flyer.people.length; i++) {
+                    var nextAge = flyer.people[i].age +1;
+                    document.getElementById("test" +i).innerHTML += "Hello " + flyer.people[i].name + " from our records you will be turning " + nextAge + " this year.";
+
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <h3>THe following contains Object Creation Functions, Inheritance. Properties, Methods, and Instantion</h3>
+        <table>
+            <tr>
+                <td>
+                    <input type="text" id="fname" placeholder="Enter first name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="lname" placeholder="Enter last name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="age" placeholder="Enter age">
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <input type="text" id="color" placeholder="Favorite color">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="button" onclick="show()" id="btn" value="Show">
+                </td>
+            </tr>
+        </table><br>
+        <div id="output"></div>
+
+        <h3>See how old a person will be on their birthday</h3>
+        <button onclick="test()" id="testbtn" class="button">Test</button>
+        <p id="test0"></p>
+        <p id="test1"></p>
+        <p id="test2"></p>
+
+
+    </body>
+
+
+</html>
