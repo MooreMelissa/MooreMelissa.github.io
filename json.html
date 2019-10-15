@@ -3,7 +3,15 @@
     <head>
         <meta charset="utf-8">
         <title>JSON</title>
-
+        <style>
+            html {
+                background-color: darkgray;
+                color: indigo;
+            }
+             p {
+                color: firebrick;
+            }
+        </style>
     </head>
     <body>
 
@@ -23,6 +31,7 @@
 
         <button class="action" type="button" onclick="storeIt()">Reveal</button>
         <p id="example2"></p>
+
 
         <script>
             //THis is text from a web server. Please notice how the quotes of the "text" string are used to avoid a parsing error. Whitespace can be inserted between any pair of tokens. It can be added to make a code more readable.
@@ -59,6 +68,8 @@
             var obj = JSON.parse(text);
             document.getElementById("example2").innerHTML = obj.name + " has a " + obj.pet;
             }
+
+
 
         </script>
 
