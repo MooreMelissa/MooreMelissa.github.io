@@ -26,7 +26,10 @@ h1 {
 }
 .column {
     float: left;
-    width: 50%;
+    width: 40%;
+}
+.column1 {
+    padding-top: 2px;
 }
 .row:after {
     content:"";
@@ -34,7 +37,8 @@ h1 {
     clear: both;
 }
 p {
-    font-size: 1.5em;
+
+    font-size: 1.2em;
     line-height: 1.4em;
     color: #0198E1;
 }
