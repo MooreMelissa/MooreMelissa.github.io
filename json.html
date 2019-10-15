@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>JSON</title>
+
+    </head>
+    <body>
+
+        <h3> Imagine received this text from a web server:</h3>
+        <p>'{ "pets":["cat", " bird", " frog", " dog"]}'</p>
+        <h3>Then using JavaScript function JSON.parse() <br>
+            to convert text into a JavaScript object</h3>
+
+        <button class="action" type="button" onclick="stringIt()">Reveal</button>
+        <p id="example1"></p>
+        <p id="example"></p>
+        <p id="example3"></p>
+        <p id="exampleResults"></p>
+
+
+        <h3>Store and retrieve data from local storage</h3>
+
+        <button class="action" type="button" onclick="storeIt()">Reveal</button>
+        <p id="example2"></p>
+
+        <script>
+            //THis is text from a web server. Please notice how the quotes of the "text" string are used to avoid a parsing error. Whitespace can be inserted between any pair of tokens. It can be added to make a code more readable.
+            function stringIt() {
+            var text = '{ "pets":["cat", " bird", " frog", " dog"]}';
+
+            // Use JSON.parse to convert string to array.
+            var result = JSON.parse(text);
+
+            // Loop over result.
+            for (var i = 0; i < result.pets.length; i++) {
+
+               document.getElementById("example1").innerHTML += "JSON PARSED ITEM: " + result.pets[i] +"<br>";
+
+            }
+
+
+            document.getElementById("exampleResults").innerHTML = "Pets: " + result.pets;
+
+            document.getElementById("example3").innerHTML = "Can access the array values by using index number: " + result.pets[2];
+
+            //Print result count.
+            document.getElementById("example").innerHTML = "The Result Count: " + result.pets.length;
+            }
+
+            function storeIt() {
+            // storing data
+            var myObj = { name: "John", pet: ["cat", " bird", " frog", " chicken"]};
+            var myJson = JSON.stringify(myObj);
+            localStorage.setItem("exampleJSON", myJson);
+
+            // retrieving data
+            var text = localStorage.getItem("exampleJSON");
+            var obj = JSON.parse(text);
+            document.getElementById("example2").innerHTML = obj.name + " has a " + obj.pet;
+            }
+
+        </script>
+
+
+    </body>
+
+
+</html>
