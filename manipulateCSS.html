@@ -53,19 +53,7 @@
                 padding: 10px;
             }
 
-            img {
-                padding: .3em;
-                width: 9em;
-                border: 1px solid #d2691e;
-                border-radius: .25em;
-            }
 
-            section {
-                height: 333px;
-                width: 450px;
-                background-color: lightgray;
-                background-size: contain;
-            }
 
 
         </style>
@@ -124,20 +112,8 @@
 
             document.getElementById("Qcontainer").addEventListener("mouseover", moveBox);
 
-            // select HTML element to use in the following functions
-            var frame = document.getElementById("zoom");
 
-            // on mouse hover zoom the thumbnail in the bigger container
-            function zoomIn(element){
 
-            // place image as background of the <section> tag
-            frame.style.backgroundImage = "url("+element.src+")";
-            }
-
-            // on mouse leave, remove the image
-            function zoomOut(element){
-                frame.style.backgroundImage = "";
-            }
         </script>
 
     </head>
@@ -174,6 +150,7 @@
          </div><br>
 
 
+
          <h3>This example uses a mouse listener and changes the top and left class property of the DIV. You will always be happy with your Salary with this questionaire</h3>
           <pre>
             function hideBox() {
@@ -201,20 +178,16 @@
 
             </div>
         </div>
-            <div id="Qcontainer" onmouseover="moveBox(this)">
-            <div id="questionBox" style="text-align: center;">
+        <div id="Qcontainer" onmouseover="moveBox(this)">
+          <div id="questionBox" style="text-align: center;">
             <h4 sytle="text-align:center;"> Are you Happy with your salary?</h4>
               <button class="btn" type="button" onclick="yes()">Yes</button>
               <button id="no" class="btn" type="button" onclick="no()">No</button>
 
-            </div>
+          </div>
 
         </div>
 
-        <p>Let's try to change a single property like the <i>backgroundImage</i> of an element </p>
-        <p>Hover over the thumbnail to zoom it in the frame below:</p>
-        <img src="/pictures/ShakespeareInLove.jpg" title="Shakespeare in Love" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)"><br><br>
-        <section id="zoom"></section><br>
 
 
 
