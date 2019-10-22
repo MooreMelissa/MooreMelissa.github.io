@@ -43,17 +43,29 @@
                 font-size: 16px;
             }
 
-            #Qcontainer1 {
+            #qContainer1 {
                 width: 306px;
                 padding: 10px;
             }
 
-            #Qcontainer {
+            #qContainer {
                 width: 306px;
                 padding: 10px;
             }
 
+            img {
+                padding: .3em;
+                width: 9em;
+                border: 1px solid #d2691e;
+                border-radius: .25em;
+            }
 
+            section {
+                height: 333px;
+                width: 450px;
+                background-color: lightgray;
+                background-size: contain;
+            }
 
 
         </style>
@@ -89,7 +101,7 @@
                 document.getElementById("no").style.visibility = "visible";
             }
 
-            document.getElementById("Qcontainer1").addEventListener("mouseenter", hideBox);
+            document.getElementById("qContainer1").addEventListener("mouseenter", hideBox);
             document.getElementById("questionBox1").addEventListener("mouseleave", showBox);
 
             function moveBox() {
@@ -97,8 +109,8 @@
                 var x = Math.floor((Math.random() * 400) + 1);
                 var y = Math.floor((Math.random() * 400) + 1);
 
-                document.getElementById("Qcontainer").style.marginTop = x+"px";
-                document.getElementById("Qcontainer").style.marginLeft = y+"px";
+                document.getElementById("qContainer").style.marginTop = x+"px";
+                document.getElementById("qContainer").style.marginLeft = y+"px";
             }
 
             function yes() {
@@ -110,8 +122,25 @@
                 window.alert("To bad!")
             }
 
-            document.getElementById("Qcontainer").addEventListener("mouseover", moveBox);
+            document.getElementById("qContainer").addEventListener("mouseover", moveBox);
 
+            document.getElementById("ishow").style.color = "red";
+
+            // select HTML element to use in the following functions
+            var frame = document.getElementById("zoom");
+
+            // on mouse hover zoom the thumbnail in the bigger container
+            function zoomIn(element){
+
+            // place image as background of the <section> tag
+            frame.style.backgroundImage = "url("+element.src+")";
+
+            }
+
+            // on mouse leave, remove the image
+            function zoomOut(element){
+            frame.style.backgroundImage = "";
+            }
 
 
         </script>
@@ -170,7 +199,7 @@
 
         </pre>
         <hr>
-        <div id="Qcontainer1" onmouseover="hideBox(this)" onmouseout="showBox(this)">
+        <div id="qContainer1" onmouseover="hideBox(this)" onmouseout="showBox(this)">
           <div id="questionBox1" style="text-align: center;">
             <h4 sytle="text-align:center;"> Are you Happy with your salary?</h4>
               <button class="btn1" type="button" onclick="yes()">Yes</button>
@@ -178,7 +207,7 @@
 
             </div>
         </div>
-        <div id="Qcontainer" onmouseover="moveBox(this)">
+        <div id="qContainer" onmouseover="moveBox(this)">
           <div id="questionBox" style="text-align: center;">
             <h4 sytle="text-align:center;"> Are you Happy with your salary?</h4>
               <button class="btn" type="button" onclick="yes()">Yes</button>
@@ -187,7 +216,16 @@
           </div>
 
         </div>
+        <div id="picture">
 
+        <p>Hover over the thumbnail to zoom it in the frame below:</p>
+        <img src="pictures/ShakespeareInLove.jpg" title="Shakespeare in Love" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)"><br><br>
+        <section id="zoom"></section><br>
+
+
+
+
+        </div>
 
 
 
