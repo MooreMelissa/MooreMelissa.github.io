@@ -4,6 +4,58 @@
         <meta charset="utf-8">
         <title>Maniputlating CSS with JavaScript</title>
 
+        <style type="text/css">
+            #questionBox1 {
+                height: 130px;
+                width: 300px;
+                border:solid black;
+                background-color: bisque;
+                border-radius: 25px;
+            }
+            #questionBox {
+                height: 130px;
+                width: 300px;
+                border:solid black;
+                background-color: purple;
+                border-radius: 25px;
+                color: white;
+            }
+            button.btn1 {
+                top:50px;
+                background-color: purple;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-decoration: none;
+                display:inline-block;
+                font-size: 16px;
+                margin: 0 auto;
+                cursor: pointer;
+            }
+            button.btn {
+                top:50px;
+                background-color: bisque;
+                border: none;
+                color: black;
+                padding: 15px 32px;
+                text-decoration: none;
+                display:inline-block;
+                font-size: 16px;
+            }
+
+            #Qcontainer1 {
+                width: 306px;
+                padding: 10px;
+            }
+
+            #Qcontainer {
+                width: 306px;
+                padding: 10px;
+            }
+
+
+        </style>
+
         <script type="text/javascript">
 
             function switchCol() {
@@ -27,7 +79,38 @@
                 document.getElementById("title").style.cssText = "font-size: 32px; color: white";
             }
 
+            function hideBox() {
+                document.getElementById("no").style.visibility = "hidden";
+            }
+
+            function showBox() {
+                document.getElementById("no").style.visibility = "visible";
+            }
+
+            document.getElementById("Qcontainer1").addEventListener("mouseenter", hideBox);
+            document.getElementById("questionBox1").addEventListener("mouseleave", showBox);
+
+            function moveBox() {
+
+                var x = Math.floor((Math.random() * 400) + 1);
+                var y = Math.floor((Math.random() * 400) + 1);
+
+                document.getElementById("Qcontainer").style.marginTop = x+"px";
+                document.getElementById("Qcontainer").style.marginLeft = y+"px";
+            }
+
+            function yes() {
+                window.alert("Your response is recorded");
+            }
+
+            function no() {
+
+                window.alert("To bad!")
+            }
+
+            document.getElementById("Qcontainer").addEventListener("mouseover", moveBox);
         </script>
+
     </head>
 
     <body>
@@ -45,26 +128,59 @@
 
 
 
-                <div>
-                    <button type="button" onclick="switchCol()">Color Change</button>
-                </div><br>
+         <div>
+             <button type="button" onclick="switchCol()">Color Change</button>
+         </div><br>
 
-                <div>
-                    <button type="button" onclick="switchSiz()">Size Change</button>
+         <div>
+             <button type="button" onclick="switchSiz()">Size Change</button>
 
-                </div><br>
-                <div>
-                    <button type="button" onclick="addPad()">Dimensions</button>
-                </div><br>
+         </div><br>
+         <div>
+             <button type="button" onclick="addPad()">Dimensions</button>
+         </div><br>
 
-                 <div>
-                    <button type="button" onclick="addBack()"> Background</button>
-                 </div><br>
-
-
+         <div>
+            <button type="button" onclick="addBack()"> Background</button>
+         </div><br>
 
 
+         <h3>This example uses a mouse listener and changes the top and left class property of the DIV. You will always be happy with your Salary with this questionaire</h3>
+          <pre>
+            function hideBox() {
+                document.getElementById("no").style.visibility = "hidden";
+            }
+            function showBox() {
+                document.getElementById("no").style.visibility = "visible;
+            }
 
+            function moveBox(){
+                var x = Math.floor((Math.random() * 400) + 1);
+                var y = Math.floor((Math.random() * 400) + 1);
+
+                document.getElementById("Qcontainer").style.marginTop = x+"px";
+                document.getElementById("Qcontainer").style.marginLeft = y+"px";
+            }
+
+        </pre>
+        <hr>
+        <div id="Qcontainer1" onmouseover="hideBox(this)" onmouseout="showBox(this)">
+          <div id="questionBox1" style="text-align: center;">
+            <h4 sytle="text-align:center;"> Are you Happy with your salary?</h4>
+              <button class="btn1" type="button" onclick="yes()">Yes</button>
+              <button id="no" class="btn1" type="button" onclick="no()">No</button>
+
+            </div>
+        </div>
+            <div id="Qcontainer" onmouseover="moveBox(this)">
+            <div id="questionBox" style="text-align: center;">
+            <h4 sytle="text-align:center;"> Are you Happy with your salary?</h4>
+              <button class="btn" type="button" onclick="yes()">Yes</button>
+              <button id="no" class="btn" type="button" onclick="no()">No</button>
+
+            </div>
+
+        </div>
 
 
 
