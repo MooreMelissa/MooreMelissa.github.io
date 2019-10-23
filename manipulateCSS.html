@@ -93,6 +93,10 @@
                 document.getElementById("title").style.cssText = "font-size: 32px; color: white";
             }
 
+
+            document.getElementById("qContainer1").addEventListener("mouseenter", hideBox);
+            document.getElementById("questionBox1").addEventListener("mouseleave", showBox);
+
             function hideBox() {
                 document.getElementById("no").style.visibility = "hidden";
             }
@@ -100,10 +104,6 @@
             function showBox() {
                 document.getElementById("no").style.visibility = "visible";
             }
-
-            document.getElementById("qContainer1").addEventListener("mouseenter", hideBox);
-            document.getElementById("questionBox1").addEventListener("mouseleave", showBox);
-
             function moveBox() {
 
                 var x = Math.floor((Math.random() * 400) + 1);
@@ -124,21 +124,23 @@
 
             document.getElementById("qContainer").addEventListener("mouseover", moveBox);
 
-            document.getElementById("ishow").style.color = "red";
+
 
             // select HTML element to use in the following functions
-            var frame = document.getElementById("zoom");
+            //var frame = document.getElementById('zoom');
 
             // on mouse hover zoom the thumbnail in the bigger container
             function zoomIn(element){
-
+                var frame = document.getElementById('zoom');
             // place image as background of the <section> tag
+             console.log(element.src);
             frame.style.backgroundImage = "url("+element.src+")";
 
             }
 
             // on mouse leave, remove the image
             function zoomOut(element){
+                var frame = document.getElementById('zoom');
             frame.style.backgroundImage = "";
             }
 
@@ -218,8 +220,8 @@
         </div>
         <div id="picture">
 
-        <p>Hover over the thumbnail to zoom it in the frame below:</p>
-        <img src="pictures/ShakespeareInLove.jpg" title="Shakespeare in Love" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)"><br><br>
+        <p id="image">Hover over the thumbnail to zoom it in the frame below:</p>
+        <img src="pictures/ShakespeareInLove.jpg"  title="Shakespeare in Love" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)"><br><br>
         <section id="zoom"></section><br>
 
 
