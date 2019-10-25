@@ -3,10 +3,48 @@
     <head>
         <meta charset="utf-8">
         <title>AJAX and JSON Web Services</title>
+        <script>
 
+
+           function loadDoc() {
+
+               var data = null;
+
+               var request = new XMLHttpRequest();
+               request.withCredentials = true;
+
+               // defining event listener for ready state change event
+              // request.addEventListener("readystatechange", function () {
+	           request.onreadystatechange = function() {
+                    //if (this.readyState === this.DONE) {
+                    if(this.readyState === 4 && this.status === 200) {
+		              console.log(this.responseText);
+
+                      var joke = JSON.parse(this.responseText);
+                      document.getElementById("joke").innerHTML = joke.value;
+	               }
+               };
+
+               //instantiating the request object
+               request.open("GET", "https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random");
+               request.setRequestHeader("x-rapidapi-host", "matchilling-chuck-norris-jokes-v1.p.rapidapi.com");
+               request.setRequestHeader("x-rapidapi-key", "7b508a6649msh867677fea66a1a7p110310jsna91c7ea08972");
+                request.setRequestHeader("accept", "application/json");
+
+               request.send(data);
+
+
+
+
+           }
+        </script>
     </head>
     <body>
 
+        <div id="result">
+           <button type="button" onclick="loadDoc()">Request Data</button>
+            <p id="joke"></p>
+        </div>
 
 
 
