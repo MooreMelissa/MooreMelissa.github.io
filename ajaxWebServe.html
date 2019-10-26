@@ -37,6 +37,50 @@
 
 
            }
+
+
+
+            function earth() {
+                var data = null;
+
+               var picEarth = new XMLHttpRequest();
+                picEarth.withCredentials = true;
+
+                picEarth.addEventListener("readystatechange", function () {
+	           if (this.readyState === this.DONE) {
+		          console.log(this.response);
+                  var earthImg = JSON.parse(this.response);
+                  document.getElementById("earth").innerHTML = earthImg;
+	           }
+            });
+
+            picEarth.open("POST", "https://nasaapidimasv1.p.rapidapi.com/getEarthImagery");
+            picEarth.setRequestHeader("x-rapidapi-host", "NasaAPIdimasV1.p.rapidapi.com");
+            picEarth.setRequestHeader("x-rapidapi-key", "7b508a6649msh867677fea66a1a7p110310jsna91c7ea08972");
+            picEarth.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+            picEarth.send(data);
+            }
+
+           function mathFacts() {
+            var data = null;
+
+            var mtrivia = new XMLHttpRequest();
+            mtrivia.withCredentials = true;
+
+            mtrivia.addEventListener("readystatechange", function () {
+	           if (this.readyState === this.DONE) {
+		              console.log(this.responseText);
+	           }
+            });
+
+            mtrivia.open("GET", "https://numbersapi.p.rapidapi.com/random/trivia?max=20&fragment=true&min=10&json=true");
+            mtrivia.setRequestHeader("x-rapidapi-host", "numbersapi.p.rapidapi.com");
+            mtrivia.setRequestHeader("x-rapidapi-key", "7b508a6649msh867677fea66a1a7p110310jsna91c7ea08972");
+
+            mtrivia.send(data);
+
+           }
         </script>
     </head>
     <body>
@@ -46,9 +90,15 @@
             <p id="joke"></p>
         </div>
 
+        <div id="results">
+            <button type="button" onclick="earth()">Images</button>
+            <p id="earth"></p>
+        </div>
 
-
-
+        <div id="facts">
+            <button type="button" onclick="mathFacts()">Trivia</button>
+            <p id="trivia"></p>
+        </div>
 
 
 
