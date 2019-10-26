@@ -70,81 +70,7 @@
 
         </style>
 
-        <script type="text/javascript">
 
-            function switchCol() {
-                document.getElementById("intro").style.color = "purple";
-                document.getElementById("intro2").style.color = "red";
-            }
-
-             function switchSiz() {
-                 document.getElementById("intro").style.fontSize = "24px";
-                 document.getElementById("intro2").style.fontSize = "50px";
-
-
-            }
-             function addPad() {
-
-                 document.getElementById("intro").style.padding = "20pt";
-             }
-
-            function addBack() {
-                document.getElementById("background").style.backgroundColor = "orange";
-                document.getElementById("title").style.cssText = "font-size: 32px; color: white";
-            }
-
-
-            document.getElementById("qContainer1").addEventListener("mouseenter", hideBox);
-            document.getElementById("questionBox1").addEventListener("mouseleave", showBox);
-
-            function hideBox() {
-                document.getElementById("no").style.visibility = "hidden";
-            }
-
-            function showBox() {
-                document.getElementById("no").style.visibility = "visible";
-            }
-            function moveBox() {
-
-                var x = Math.floor((Math.random() * 400) + 1);
-                var y = Math.floor((Math.random() * 400) + 1);
-
-                document.getElementById("qContainer").style.marginTop = x+"px";
-                document.getElementById("qContainer").style.marginLeft = y+"px";
-            }
-
-            function yes() {
-                window.alert("Your response is recorded");
-            }
-
-            function no() {
-
-                window.alert("To bad!")
-            }
-
-            document.getElementById("qContainer").addEventListener("mouseover", moveBox);
-
-
-
-            // select HTML element to use in the following functions
-            //var frame = document.getElementById('zoom');
-
-            // on mouse hover zoom the thumbnail in the bigger container
-            function zoomIn(element){
-                var frame = document.getElementById('zoom');
-                // place image as background of the <section> tag
-                frame.style.backgroundImage = "url("+element.src+")";
-
-            }
-
-            // on mouse leave, remove the image
-            function zoomOut(element){
-                var frame = document.getElementById('zoom');
-                frame.style.backgroundImage = "";
-            }
-
-
-        </script>
 
     </head>
 
@@ -228,7 +154,81 @@
 
         </div>
 
+        <script type="text/javascript">
 
+            function switchCol() {
+                document.getElementById("intro").style.color = "purple";
+                document.getElementById("intro2").style.color = "red";
+            }
+
+             function switchSiz() {
+                 document.getElementById("intro").style.fontSize = "24px";
+                 document.getElementById("intro2").style.fontSize = "50px";
+
+
+            }
+             function addPad() {
+
+                 document.getElementById("intro").style.padding = "20pt";
+             }
+
+            function addBack() {
+                document.getElementById("background").style.backgroundColor = "orange";
+                document.getElementById("title").style.cssText = "font-size: 32px; color: white";
+            }
+
+
+            document.getElementById("qContainer1").addEventListener("mouseenter", hideBox);
+            document.getElementById("questionBox1").addEventListener("mouseleave", showBox);
+
+            function hideBox() {
+                document.getElementById("no").style.visibility = "hidden";
+            }
+
+            function showBox() {
+                document.getElementById("no").style.visibility = "visible";
+            }
+            function moveBox() {
+
+                var x = Math.floor((Math.random() * 400) + 1);
+                var y = Math.floor((Math.random() * 400) + 1);
+
+                document.getElementById("qContainer").style.marginTop = x+"px";
+                document.getElementById("qContainer").style.marginLeft = y+"px";
+            }
+
+            function yes() {
+                window.alert("Your response is recorded");
+            }
+
+            function no() {
+
+                window.alert("To bad!")
+            }
+
+            document.getElementById("qContainer").addEventListener("mouseover", moveBox);
+
+
+
+            // select HTML element to use in the following functions
+            //var frame = document.getElementById('zoom');
+
+            // on mouse hover zoom the thumbnail in the bigger container
+            function zoomIn(element){
+                var frame = document.getElementById('zoom');
+                // place image as background of the <section> tag
+                frame.style.backgroundImage = "url("+element.src+")";
+
+            }
+
+            // on mouse leave, remove the image
+            function zoomOut(element){
+                var frame = document.getElementById('zoom');
+                frame.style.backgroundImage = "";
+            }
+
+
+        </script>
 
 
 
