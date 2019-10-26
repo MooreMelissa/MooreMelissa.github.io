@@ -93,7 +93,7 @@
                var data = null;
 
                var request = new XMLHttpRequest();
-               request.withCredentials = true;
+              // request.withCredentials = true;
 
                // defining event listener for ready state change event
               // request.addEventListener("readystatechange", function () {
@@ -103,16 +103,19 @@
 		              console.log(this.responseText);
 
                       var joke = JSON.parse(this.responseText);
-                      document.getElementById("joke").innerHTML = joke.value;
+                      //document.getElementById("joke").innerHTML = joke.value;
+                        document.getElementById("joke").innerHTML = joke;
 	               }
                };
 
                //instantiating the request object
-               request.open("GET", "https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random");
-               request.setRequestHeader("x-rapidapi-host", "matchilling-chuck-norris-jokes-v1.p.rapidapi.com");
-               request.setRequestHeader("x-rapidapi-key", "7b508a6649msh867677fea66a1a7p110310jsna91c7ea08972");
-                request.setRequestHeader("accept", "application/json");
+              // request.open("GET", "https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random");
+               //request.setRequestHeader("x-rapidapi-host", "matchilling-chuck-norris-jokes-v1.p.rapidapi.com");
+              // request.setRequestHeader("x-rapidapi-key", "7b508a6649msh867677fea66a1a7p110310jsna91c7ea08972");
+              //  request.setRequestHeader("accept", "application/json");
 
+               request.open("GET", "https://geek-jokes.sameerkumar.website/api");
+               request.setRequestHeader("accept", "application/json");
                request.send(data);
 
 
