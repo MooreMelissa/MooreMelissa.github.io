@@ -3,7 +3,89 @@
     <head>
         <meta charset="utf-8">
         <title>AJAX and JSON Web Services</title>
+
+    </head>
+    <body>
+
+       <h2>AJAX and JSON - API Web Services</h2>
+        <hr>
+
+        <p>Select a city from the list below</p>
+
+        <form name="list">
+            <input type="radio" name="city" value="5368361" id="one"><label for="one">Los Angeles</label>
+            <input type="radio" name="city" value="5128581" id="two"><label for="two">New York City</label>
+            <input type="radio" name="city" value="4560349" id="three"><label for="three">Philadelphia</label>
+        </form>
+
+        <button id="btn" type="button">Check Weather</button>
+
+        <div id="wrapper">
+            <ul>
+                <li id="info1"></li>
+                <li id="info2"></li>
+                <li id="info3"></li>
+
+            </ul>
+        </div>
+
+
+        <div id="result">
+           <button type="button" onclick="loadDoc()">Request Data</button>
+            <p id="joke"></p>
+        </div>
+
         <script>
+
+
+            // create a variable to hold the html button item
+            var btn = document.getElementById("btn");
+
+            // add an event listener to the button
+            btn.addEventListener('click', function(){
+
+                // retrieve the value from the radio button checked
+               var city = document.forms.list.city.value;
+
+               // create an instance of XMLHttpRequest
+               var request = new XMLHttpRequest();
+
+               // establish the connection
+               request.open('GET','https://api.weatherbit.io/v2.0/current?city_id='+city+'&key=716636b2f5704a17a4cbcf73c09dde64');
+
+               request.onreadystatechange = function() {
+                    if(this.readyState === 4 && this.status === 200) {
+                        // if the request is successfully completed, then go ahead
+                        request.onload = function() {
+
+                        // parse the JSON string returned by the API web service server
+                        var data = JSON.parse(request.responseText);
+
+                        // print the parsed data into the console (for debugging purpose)
+                        console.log(data);
+
+                       // call for the function responsible to display the data in the html page
+                       fillHTMLelement(data);
+                       }
+                   }
+               }
+
+               request.send();
+           });
+
+
+          function fillHTMLelement(info){
+
+              var city = info.data[0].city_name;
+              var temperature = info.data[0].temp;
+              var desc = info.data[0].weather.description;
+
+              document.getElementById('info1').innerHTML = city;
+              document.getElementById('info2').innerHTML = temperature + " C&deg;";
+              document.getElementById('info3').innerHTML = desc;
+          }
+
+
 
 
            function loadDoc() {
@@ -34,71 +116,12 @@
                request.send(data);
 
 
-
-
            }
 
 
 
-            function earth() {
-                var data = null;
 
-               var picEarth = new XMLHttpRequest();
-                picEarth.withCredentials = true;
-
-                picEarth.addEventListener("readystatechange", function () {
-	           if (this.readyState === this.DONE) {
-		          console.log(this.response);
-                  var earthImg = JSON.parse(this.response);
-                  document.getElementById("earth").innerHTML = earthImg;
-	           }
-            });
-
-            picEarth.open("POST", "https://nasaapidimasv1.p.rapidapi.com/getEarthImagery");
-            picEarth.setRequestHeader("x-rapidapi-host", "NasaAPIdimasV1.p.rapidapi.com");
-            picEarth.setRequestHeader("x-rapidapi-key", "7b508a6649msh867677fea66a1a7p110310jsna91c7ea08972");
-            picEarth.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-
-            picEarth.send(data);
-            }
-
-           function mathFacts() {
-            var data = null;
-
-            var mtrivia = new XMLHttpRequest();
-            mtrivia.withCredentials = true;
-
-            mtrivia.addEventListener("readystatechange", function () {
-	           if (this.readyState === this.DONE) {
-		              console.log(this.responseText);
-	           }
-            });
-
-            mtrivia.open("GET", "https://numbersapi.p.rapidapi.com/random/trivia?max=20&fragment=true&min=10&json=true");
-            mtrivia.setRequestHeader("x-rapidapi-host", "numbersapi.p.rapidapi.com");
-            mtrivia.setRequestHeader("x-rapidapi-key", "7b508a6649msh867677fea66a1a7p110310jsna91c7ea08972");
-
-            mtrivia.send(data);
-
-           }
         </script>
-    </head>
-    <body>
-
-        <div id="result">
-           <button type="button" onclick="loadDoc()">Request Data</button>
-            <p id="joke"></p>
-        </div>
-
-        <div id="results">
-            <button type="button" onclick="earth()">Images</button>
-            <p id="earth"></p>
-        </div>
-
-        <div id="facts">
-            <button type="button" onclick="mathFacts()">Trivia</button>
-            <p id="trivia"></p>
-        </div>
 
 
 
