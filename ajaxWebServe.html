@@ -109,13 +109,11 @@
 
             <button type="button" onclick="loadDoc()">Click Here!</button>
 
+
             <p id="joke"></p>
+            <p id="space" style="align-content: center;"></p>
         </div>
 
-        <div id="space">
-            <button type="button" onclick="space()">Click</button>
-
-        </div>
 
         <script>
 
@@ -201,10 +199,7 @@
                request.send(data);
 
 
-           }
-
-            function space() {
-            var data = null;
+            var datas = null;
 
             var nasa = new XMLHttpRequest();
             //nasa.withCredentials = true;
@@ -215,13 +210,17 @@
 		              console.log(this.responseText);
                       var fact = JSON.parse(this.responseText);
 
-                       document.getElementById("space").innerHTML = fact.title +"<br>" + "<img src="+fact.url+ " width=300px>";
+                       document.getElementById("space").innerHTML =  "<img src="+fact.url+ " width=400px>" + "<br>" +fact.title;
 
                     }
             }
             nasa.open("GET", "https://api.nasa.gov/planetary/apod?api_key=MDOZB6Xt1dWYxoWm9QUAeNfHcHc2ieLGIxTnG51p")
-            nasa.send(data);
+            nasa.send(datas);
+
             }
+
+
+
         </script>
 
 
