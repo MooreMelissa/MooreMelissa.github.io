@@ -112,6 +112,11 @@
             <p id="joke"></p>
         </div>
 
+        <div id="space">
+            <button type="button" onclick="space()">Click</button>
+
+        </div>
+
         <script>
 
 
@@ -198,9 +203,25 @@
 
            }
 
+            function space() {
+            var data = null;
 
+            var nasa = new XMLHttpRequest();
+            //nasa.withCredentials = true;
 
+            nasa.onreadystatechange = function() {
+                    //if (this.readyState === this.DONE) {
+                    if(this.readyState === 4 && this.status === 200) {
+		              console.log(this.responseText);
+                      var fact = JSON.parse(this.responseText);
 
+                       document.getElementById("space").innerHTML = fact.title +"<br>" + "<img src="+fact.url+ " width=300px>";
+
+                    }
+            }
+            nasa.open("GET", "https://api.nasa.gov/planetary/apod?api_key=MDOZB6Xt1dWYxoWm9QUAeNfHcHc2ieLGIxTnG51p")
+            nasa.send(data);
+            }
         </script>
 
 
