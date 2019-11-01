@@ -248,14 +248,14 @@
     var localAssarr = JSON.parse( localStorage.getItem("assarrValues"));
     // fill the form labeled "From an Associative Array"
     document.getElementById("assarr1").value = localAssarr["nickname"];
-    document.getElementById("assarr2").value = localAssarr["sport"];
+    document.getElementById("assarr2").value = localAssarr["sports"];
     document.getElementById("assarr3").value = localAssarr["existence"];
 
     // parse the JSON string into its corresponding JavaScript object
     var localObj = JSON.parse( localStorage.getItem("objValues"));
     // fill the form labeled "From an Object"
     document.getElementById("obj1").value = localObj.nickname;
-    document.getElementById("obj2").value = localObj.sport;
+    document.getElementById("obj2").value = localObj.sports;
     document.getElementById("obj3").value = localObj.existence;
 
    }
