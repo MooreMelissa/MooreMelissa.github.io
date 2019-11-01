@@ -83,7 +83,7 @@
               Type item in the input field and press enter to save it
             </p>
             <form>
-                <input id="shopList" type="text" placeholder="enter something" class="field" required />
+                <input id="list" type="text" placeholder="enter something" class="field" required />
             </form>
             <h2>Shopping List</h2>
             <ul></ul>
@@ -153,14 +153,14 @@
             const form = document.querySelector("form");
             const ul = document.querySelector("ul");
             const button = document.querySelector("button");
-            const input = document.getElementById("shopList");
+            const input = document.getElementById("list");
 
-            let itemsArray = localStorage.getItem("shoplists")
-              ? JSON.parse(localStorage.getItem("shoplists"))
+            let itemsArray = localStorage.getItem("lists")
+              ? JSON.parse(localStorage.getItem("lists"))
               : [];
 
-            localStorage.setItem("shoplists", JSON.stringify(itemsArray));
-             const data = JSON.parse(localStorage.getItem("shoplists"));
+            localStorage.setItem("lists", JSON.stringify(itemsArray));
+             const data = JSON.parse(localStorage.getItem("lists"));
 
              const addItemToList = text => {
              const li = document.createElement("li");
@@ -168,17 +168,19 @@
               ul.appendChild(li);
               };
 
-            // display anything already in local storage
-            data.forEach(item => {
-            addItemToList(item);
+            //display anything already in local storage
+            data.forEach(list => {
+            addItemToList(list);
             });
+
+
 
           form.addEventListener("submit", function(e) {
           e.preventDefault();
 
           // update localstorage
           itemsArray.push(input.value);
-          localStorage.setItem("shoplists", JSON.stringify(itemsArray));
+          localStorage.setItem("lists", JSON.stringify(itemsArray));
 
           // show the user
           addItemToList(input.value);
