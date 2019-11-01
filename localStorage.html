@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Local Storage Storing and Retrieving Arrays, Associative Arrays, and Objects</title>
+    </head>
+    <body>
+        <div class="brownBag">
+            <p>Create a Shopping List. <br>
+              Type item in the input field and press enter to save it
+            </p>
+            <form>
+                <input id="shopList" type="text" placeholder="enter something" required />
+            </form>
+            <h2>Shopping List</h2>
+            <ul></ul>
+            <button class="button">Clear List</button>
+        </div>
+
+
+
+
+
+
+        <script>
+            const form = document.querySelector("form");
+            const ul = document.querySelector("ul");
+            const button = document.querySelector("button");
+            const input = document.getElementById("shopList");
+
+            let itemsArray = localStorage.getItem("shoplists")
+              ? JSON.parse(localStorage.getItem("shoplists"))
+              : [];
+
+            localStorage.setItem("shoplists", JSON.stringify(itemsArray));
+             const data = JSON.parse(localStorage.getItem("shoplists"));
+
+             const addItemToList = text => {
+             const li = document.createElement("li");
+             li.textContent = text;
+              ul.appendChild(li);
+              };
+
+            // display anything already in local storage
+            data.forEach(item => {
+            addItemToList(item);
+            });
+
+          form.addEventListener("submit", function(e) {
+          e.preventDefault();
+
+          // update localstorage
+          itemsArray.push(input.value);
+          localStorage.setItem("shoplists", JSON.stringify(itemsArray));
+
+          // show the user
+          addItemToList(input.value);
+          input.value = "";
+           });
+
+          button.addEventListener("click", function() {
+          localStorage.clear();
+           while (ul.firstChild) {
+            ul.removeChild(ul.firstChild);
+           }
+          });
+
+        </script>
+
+
+
+
+
+
+    </body>
+</html>
