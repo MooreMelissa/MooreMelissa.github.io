@@ -3,22 +3,149 @@
     <head>
         <meta charset="utf-8">
         <title>Local Storage Storing and Retrieving Arrays, Associative Arrays, and Objects</title>
+
+        <style>
+            body {
+                background-color: antiquewhite;
+            }
+            h3{
+             color: #d2691e;
+             font-size: 1.4em;
+             margin-top: 1.5em;
+           }
+
+          p{
+           color: #628395;
+           font-size: 1.2em;
+          }
+
+          div#flex{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+           }
+
+        form{
+           margin: 0 0 1.3em;
+         }
+
+         fieldset{
+           width: 20em;
+          }
+
+         legend{
+            font-size: 1.2em;
+            color: #d2691e;
+          }
+
+          label{
+             display: inline-block;
+             width: 5em;
+             color: #628395;
+            font-size: 1.3em;
+           }
+
+         input{
+            padding: .7em;
+            width: 9em;
+            text-align: center;
+            border-radius: 5px;
+            border-style: none;
+            font-size: 1.1em;
+            margin: .5em 0 0 .5em;
+            color: #d2691e;
+          }
+
+         input[type=text]:focus {
+             background-color: lightcyan;
+          }
+
+        .action {
+           background-color: cornflowerblue;
+           border-style: none;
+           padding: .65em 1.3em;
+           border-radius: 5px;
+           font-size: 1em;
+           color: #ffd686;
+           cursor: pointer;
+          }
+
+
+        </style>
     </head>
+    <header>
+        <h2 id="header">Local Storage Storing and Retrieving Arrays, Associative Arrays, and Objects</h2>
+        <hr>
+    </header>
     <body>
         <div class="brownBag">
             <p>Create a Shopping List. <br>
               Type item in the input field and press enter to save it
             </p>
             <form>
-                <input id="shopList" type="text" placeholder="enter something" required />
+                <input id="shopList" type="text" placeholder="enter something" class="field" required />
             </form>
             <h2>Shopping List</h2>
             <ul></ul>
-            <button class="button">Clear List</button>
+            <button class="action">Clear List</button>
         </div>
 
+        <div id="container" onload="checkLS()">
+        <div id="bef">
+            <h3>Step 1</h3>
+            <p>Let's start by providing some information in the form below:</p>
+            <form id="base">
+                <input type="text" placeholder="Nickname" id="nickName" class="field" required="required">
+                <input type="text" placeholder="Favorite Sport" id="sport" class="field" required="required">
+                <input type="number" placeholder="Age" id="age" class="field" required="required">
+            </form>
+            <p>Click to store these values in the local storage and to refresh tha page.</p>
+            <button class="action" type="button" onclick="storeAndRefresh()">Store & Refresh</button>
+        </div>
 
+        <div id="aft">
+            <h3>Step 2</h3>
+            <p>Now that the page has been refreshed, let's see if the browser kept the values provided.</p>
+            <p>Below there are three forms that will display the same information.</p>
+            <p>However, each form takes its values from a different JavaScript entity within the local storage.</p>
+            <button class="action" type="button" onclick="retrieve()">Retrieve</button><br><br>
 
+        <div id="flex">
+                <form>
+                    <fieldset>
+                        <legend>From an Array</legend>
+                        <label>Nickname:</label><input type="text" class="field" id="arr1" readonly><br>
+                        <label>Favorite Sport:</label><input type="text" class="field" id="arr2" readonly><br>
+                        <label>Age:</label><input type="number" class="field" id="arr3" readonly><br>
+                    </fieldset>
+                </form>
+
+                <form>
+                    <fieldset>
+                        <legend>From an Associative Array</legend>
+                        <label>Nickname:</label><input type="text" class="field" id="assarr1" readonly><br>
+                        <label>Favorite Sport:</label><input type="text" class="field" id="assarr2" readonly><br>
+                        <label>Age:</label><input type="number" class="field" id="assarr3" readonly><br>
+                    </fieldset>
+                </form>
+
+                <form>
+                    <fieldset>
+                        <legend>From an Object</legend>
+                        <label>Nickname:</label><input type="text" class="field" id="obj1" readonly><br>
+                        <label>Favorite Sport:</label><input type="text" class="field" id="obj2" readonly><br>
+                        <label>Age:</label><input type="number" class="field" id="obj3" readonly><br>
+                    </fieldset>
+                </form>
+              </div>
+           </div>
+        </div>
+
+        <div>
+            <h3>Step 3</h3>
+            <p>Before leaving, let's clear the local storage and refresh the page once again.</p>
+            <button class="action" type="button" onclick="emptyLS()">Flush</button><br><br>
+        </div>
 
 
 
@@ -64,6 +191,84 @@
             ul.removeChild(ul.firstChild);
            }
           });
+
+         // check if the local storage contains any items
+         function checkLS() {
+
+            if( localStorage.getItem("arrValues") !== null ){
+            document.getElementById("bef").style.display = "none";
+            }
+         }
+
+        // collect the user inputs, distribute them in different entities, store them locally and refresh the page
+        function storeAndRefresh(){
+
+       // retrieve user inputs
+       var nname = document.getElementById('nickName').value,
+           spor = document.getElementById('sport').value,
+           age = document.getElementById('age').value;
+
+       // create array
+       var arr = [nname,spor,age];
+
+       // create associative array
+       var assarr = {"nickname":nname,"sports":spor,"existence":age};
+
+       // create object
+       var obj = {nickname:nname, sports:spor, existence:age};
+
+      // save the JavaScript entities in the local storage as JSON strings
+      localStorage.setItem("arrValues",JSON.stringify(arr));
+      localStorage.setItem("assarrValues",JSON.stringify(assarr));
+      localStorage.setItem("objValues",JSON.stringify(obj));
+
+      console.log( localStorage.getItem("arrValues") );
+      console.log( localStorage.getItem("assarrValues") );
+      console.log( localStorage.getItem("objValues") );
+
+     refresh();
+     }
+
+
+    function refresh() {
+        history.go(0);
+     }
+
+     // retrieve values from the items stored in the local storage
+    function retrieve(){
+
+    // parse the JSON string into its corresponding JavaScript array
+    var localArr = JSON.parse( localStorage.getItem("arrValues"));
+    // fill the form labeled "From an Array"
+    document.getElementById('arr1').value = localArr[0];
+    document.getElementById('arr2').value = localArr[1];
+    document.getElementById('arr3').value = localArr[2];
+
+    // parse the JSON string into its corresponding JavaScript associative array
+    var localAssarr = JSON.parse( localStorage.getItem("assarrValues"));
+    // fill the form labeled "From an Associative Array"
+    document.getElementById("assarr1").value = localAssarr["nickname"];
+    document.getElementById("assarr2").value = localAssarr["university"];
+    document.getElementById("assarr3").value = localAssarr["existence"];
+
+    // parse the JSON string into its corresponding JavaScript object
+    var localObj = JSON.parse( localStorage.getItem("objValues"));
+    // fill the form labeled "From an Object"
+    document.getElementById("obj1").value = localObj.nickname;
+    document.getElementById("obj2").value = localObj.university;
+    document.getElementById("obj3").value = localObj.existence;
+
+   }
+
+   // empty local storage
+   function emptyLS(){
+
+    localStorage.removeItem("arrValues");
+    localStorage.removeItem("assarrValues");
+    localStorage.removeItem("objValues");
+
+    refresh();
+    }
 
         </script>
 
