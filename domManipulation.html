@@ -3,7 +3,270 @@
     <head>
         <meta charset="utf-8">
         <title>DOM Manipulation </title>
+
+        <style>
+            body {
+                background-color: antiquewhite
+            }
+            h2{
+              text-align: center;
+              padding-top: .5em;
+            }
+
+           h3{
+             color: #628395;
+             font-size: 1.35em;
+             text-align: center;
+           }
+
+           p{
+             color: #96897b;
+             font-size: 1.2em;
+             text-align: center;
+           }
+
+          .flexy{
+             display: flex;
+             flex-flow: row wrap;
+             justify-content: space-around;
+             align-items: start;
+           }
+
+          .flexy2{
+             display: flex;
+             flex-flow: column nowrap;
+             align-items: center;
+             justify-items: center;
+             margin-bottom: 2em;
+           }
+
+          .flexy3 p{
+             font-family: 'Amatic SC', cursive;
+             color: #0c5460;
+             font-size: 1.5em;
+             display: none;
+           }
+
+          .container {
+              height: 15em;
+              width: 15em;
+              background-color: #93b7d2;
+              margin: 0 .5em;
+          }
+
+         .flexy3{
+             box-sizing: border-box;
+             display: flex;
+             flex-flow: row wrap;
+             justify-content: space-evenly;
+             align-items: center;
+             padding: .3em;
+             overflow: scroll;
+          }
+
+         .action {
+             background-color: #96897b;
+             border-style: none;
+             padding: .65em 1.3em;
+             border-radius: 5px;
+             font-size: .95em;
+             color: #ffd686;
+             cursor: pointer;
+             margin: .5em 0;
+           }
+
+
+            /* FIRST CONTAINER */
+           #box1 span{
+              display: block;
+              height: 4em;
+              width: 4em;
+              margin: .15em;
+              background: #0c3d5d;
+            }
+
+          /* SECOND CONTAINER */
+         #box2 p{
+            box-sizing: border-box;
+            width: 4em;
+            height: 4em;
+            background: #ffad92;
+            display: block;
+            padding-top: 15%;
+         }
+
+        /* THIRD CONTAINER */
+        #box3{
+           background: #ff473a;
+           justify-content: center;
+         }
+
+        #box3 span{
+           font-family: 'Amatic SC', cursive;
+           font-size: 2.5em;
+           color: #c6d6e2;
+        }
+
+        /* FOURTH CONTAINER */
+       #box4{
+           background: #ffad92;
+           padding: 0;
+       }
+
+       form{
+           text-align: center;
+       }
+
+       .field{
+          padding: .7em;
+          width: 9em;
+          text-align: center;
+          font-size: 1.1em;
+          margin: .5em 0 0 .5em;
+          background: #ffae93;
+          color: #8d8d8d;
+          border: solid 1.5px #8d8d8d;
+          outline: none;
+          box-sizing: content-box;
+        }
+
+       .field:focus{
+           background: #c4836d;
+           color: #ffffff;
+        }
+
+
+
+        </style>
     </head>
     <body>
+
+        <div id="example1">
+           <form>
+            <p class="note">Create a reminder.<br>
+               Please enter a title, date, and the reminder</p><hr>
+              <p class="note"> Reminder:
+                  <input class="note" type="input" id="name" placeholder="Title of Reminder"></p>
+              <p class="note"> Date:
+                  <input class="note" id="dates" type="date"></p>
+               <p>Details:<br><textarea id="reminder" placeholder="Reminder"></textarea><br><br>
+               <button class="note" onclick="remind()">Set Reminder</button>
+               </p>
+            </form>
+       </div>
+
+        <p class="output"></p>
+        <p class="output"></p>
+        <p class="output"></p>
+
+        <br><br>
+
+        <h3>Here is a poem creator to add elements and then delete all elements of the poem</h3>
+            <div id="div1">
+                <h3>Poem Creator</h3>
+                <p><textarea id="line" placeholder="Insert a line here"></textarea></p>
+                <p><button type="button" onclick="createP()">Create a line</button>
+                  <button type="button" onclick="resetP()">Reset Poem</button></p>
+
+            </div>
+            <div id="poem">
+
+            </div>
+           <br><br>
+
+          <div class="flexy">
+          <div class="flexy2">
+            <div>
+                <button id="append" class="action" onclick="appChild()">Append Child</button>
+            </div>
+
+            <div id="box1" class="container flexy3">
+                <p id="tip1"></p>
+            </div>
+
+            <div>
+                <button id="remove" class="action" onclick="remChild()">Remove Child</button>
+            </div>
+        </div>
+
+        <div class="flexy2">
+            <div>
+                <button id="replace" class="action" onclick="repChild()">Replace Child</button>
+            </div>
+            <div id="box2" class="container flexy3"><p id="tip2">Replace Me</p></div>
+            <div>
+                <button id="revert" class="action" onclick="revert()">Give it Back</button>
+            </div>
+        </div>
+
+        <div class="flexy2">
+            <div>
+                <button id="insert" class="action" onclick="insBefore()">Insert Before</button>
+            </div>
+            <div id="box3" class="container flexy3"><span id="tip3">&nbsp;is beautiful!</span></div>
+            <div>
+                <button id="rem" class="action" onclick="remInsert()">Remove</button>
+            </div>
+        </div>
+
+        <div class="flexy2">
+            <div>
+                <button id="" class="action" onclick="setAtt()">Set Attribute</button>
+            </div>
+            <div id="box4" class="container flexy3">
+                <form>
+                    <input type="text" placeholder="text field">
+                    <input type="text" placeholder="text field">
+                    <input type="text" placeholder="text field">
+                </form>
+            </div>
+            <div>
+                <button id="remo" class="action" onclick="remAtt()">Remove Attribute</button>
+            </div>
+        </div>
+        </div>
+
+        <script>
+            function remind(){
+                var name = document.getElementById("name").value;
+                var date = document.getElementById("dates").value;
+                var reminder = document.getElementById("reminder").value;
+
+                var out = document.getElementsByClassName("output");
+                out[0].innerHTML = "Thank you, We will remind you about " + name + " on " +  new Date(date) + ". The reminder will be " + reminder + " tomorrow";
+
+                removeElem("example1");
+
+            }
+
+               function removeElem(out) {
+                    document.getElementById(out).remove();
+
+               }
+
+             var para = document.createElement("p");
+             para.appendChild(node);
+             var element = document.getElementById("div1");
+             element.appendChild(para);
+
+            function createP(){
+
+                var information = document.getElementById("line").value;
+                var newLine = document.createElement("p");
+                var createLine = document.createTextNode(information);
+                newLine.appendChild(createLine);
+                var fullPoem = document.getElementById("poem");
+                fullPoem.appendChild(newLine);
+             }
+
+             function resetP(){
+                var poem = document.getElementById("poem");
+                while (poem.firstChild) {
+                poem.removeChild(poem.firstChild);
+                }
+             }
+
+
+        </script>
     </body>
 </html>
