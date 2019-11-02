@@ -37,14 +37,16 @@
              flex-flow: column nowrap;
              align-items: center;
              justify-items: center;
-             margin-bottom: 2em;
+
            }
 
           .flexy3 p{
              font-family: 'Amatic SC', cursive;
              color: #0c5460;
-             font-size: 1.5em;
+             font-size: 1.2em;
              display: none;
+             margin-bottom: 2em;
+
            }
 
           .container {
@@ -92,7 +94,8 @@
             height: 4em;
             background: #ffad92;
             display: block;
-            padding-top: 15%;
+            padding-top: 9%;
+
          }
 
         /* THIRD CONTAINER */
@@ -197,13 +200,13 @@
             <div>
                 <button id="revert" class="action" onclick="revert()">Give it Back</button>
             </div>
-        </div>
+            </div>
 
         <div class="flexy2">
             <div>
                 <button id="insert" class="action" onclick="insBefore()">Insert Before</button>
             </div>
-            <div id="box3" class="container flexy3"><span id="tip3">&nbsp;is beautiful!</span></div>
+            <div id="box3" class="container flexy3"><span id="tip3">&nbsp;Be Happy!</span></div>
             <div>
                 <button id="rem" class="action" onclick="remInsert()">Remove</button>
             </div>
@@ -245,7 +248,7 @@
                }
 
              var para = document.createElement("p");
-             para.appendChild(node);
+             //para.appendChild(node);
              var element = document.getElementById("div1");
              element.appendChild(para);
 
@@ -265,6 +268,110 @@
                 poem.removeChild(poem.firstChild);
                 }
              }
+
+             // FIRST CONTAINER: APPEND CHILD & REMOVE CHILD
+
+             // target the container
+            var box1 = document.getElementById('box1');
+            var tip1 = document.getElementById('tip1');
+
+            function appChild(){
+
+               var count = box1.querySelectorAll('span');
+
+               if(count.length === 0){
+                   tip1.style.display = "none";
+               }
+
+               // create an element
+               var span = document.createElement('span');
+
+               // add the element to a specific container
+               box1.appendChild(span);
+
+            }
+
+            function remChild(){
+
+               // count all the <span> tags within the parent element (returns an array)
+               var count = box1.querySelectorAll('span');
+
+               // check if there is at least one <span> tag in the array
+               if (count.length > 0){
+                  // remove the first <span> tag in the array
+                  box1.removeChild(count[0]);
+               } else {
+                  // if there are no <span> tag left, display a message
+                  tip1.style.display = "block";
+                  tip1.innerHTML = "No More Child to Remove";
+               }
+
+            }
+
+           // SECOND CONTAINER: REPLACE CHILD
+           var box2 = document.getElementById('box2');
+           var tip2 = document.getElementById('tip2');
+
+          // create an element
+          var p = document.createElement('p');
+
+          function repChild() {
+
+               p.style.background = "#FFBE00";
+               p.textContent = "I'm New!";
+
+               // remove the existing paragraph and place the new one
+               box2.replaceChild(p,tip2);
+          }
+
+          function revert(){
+               box2.replaceChild(tip2,p);
+          }
+
+          // THIRD CONTAINER: INSERT BEFORE
+          var box3 = document.getElementById('box3');
+          var spanFrag = document.createElement('span');
+          var spanTarget = document.getElementById('tip3');
+
+         function insBefore(){
+
+             // add content to the new <span> tag
+             spanFrag.textContent = "Don't Worry";
+
+             // insert the new <span> before the existing one
+             box3.insertBefore(spanFrag,spanTarget);
+
+           }
+
+           // remove the element inserted before
+           function remInsert(){
+               // count all the <span> tags within the parent element (returns an array)
+               var count = box3.querySelectorAll('span');
+
+               // check if there is at least one <span> tag in the array
+               if (count.length == 2){
+               // remove the first <span> tag in the array
+               box3.removeChild(count[0]);
+               }
+           }
+
+          // FOURTH CONTAINER: SET/REMOVE ATTRIBUTE
+
+          var inputFields = document.querySelectorAll('input');
+
+          // add a class attribute to apply style configured in the CSS stylesheet
+          function setAtt(){
+            for(var field of inputFields){
+               field.setAttribute('class','field');
+            }
+         }
+        // remove the class attribute to remove the style previously applied
+        function remAtt(){
+           for(var field of inputFields){
+               field.removeAttribute('class');
+           }
+        }
+
 
 
         </script>
