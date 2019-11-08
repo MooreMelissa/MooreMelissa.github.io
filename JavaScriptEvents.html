@@ -151,7 +151,7 @@
             #button {
                 height: 100px;
                 width: 100px;
-                background-color: #ff6666;
+                background-color: #ffcccc;
                 color: #628395;
                 border-radius: 50px;
                 border-style: solid;
@@ -171,6 +171,30 @@
                 display: flex;
                 flex-flow: column;
                 justify-content: space-evenly;
+            }
+
+            /* zero container */
+            #box0 {
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #box0 p {
+                box-shadow: border-box;
+                font-family: 'Amatic SC', monospace;
+                color: #0c5460;
+                font-size: 3em;
+                width: 3em;
+                height: 3em;
+                margin: 0;
+                padding: 17.5% 0 0;
+                background: #ffcccc;
+            }
+
+            .spin {
+                animation: spin 4s linear 400ms;
             }
 
 
@@ -248,6 +272,15 @@
              </div>
 
          </div>
+        <div class="flexy2">
+            <div>
+                <p>"animation" events</p>
+            </div>
+            <div id="box0" class="container-zero">
+                <p id="anima">Click Me</p>
+            </div>
+
+        </div>
 
         </div>
         <script>
@@ -323,7 +356,30 @@
                 release.style.cssText = "color: #0c5460;";
             };
 
+            // animation events
 
+            let anima = document.querySelector('#anima');
+
+            anima.addEventListener('click', function() {
+                anima.classList.add('spin');
+            });
+
+            anima.addEventListener('animationstart', function(){
+                anima.innerHTML = "Start";
+            });
+
+            anima.addEventListener('animationend', function() {
+                anima.innerHTML = "End";
+
+               //reset the properties after 1.5s, so user can click again
+               setTimeout(function() {
+
+                anima.classList.remove('spin');
+
+                anima.innerHTML = "Click Me";
+                }, 1500);
+
+              });
 
 
 
