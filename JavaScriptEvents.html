@@ -97,16 +97,82 @@
                 box-sizing: content-box;
             }
 
+            /* third container */
+            #box3 {
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #scale {
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: center;
+                width: 5em;
+                height: 5em;
+                background: #0c5460;
+                transition: transform 1.5s linear;
+            }
+
+            .scale{
+                transform: scale(3);
+                transition: transform 1.5s linear;
+            }
+            #scale p{
+                color: #ffd686;
+            }
+
+            /* fourth container */
+            #box4 {
+                font-family: 'Amatic SC', monospace;
+                display:flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+            }
+            #box4 p {
+                color #0c5460;
+                font-size: 1.5em;
+            }
+            #box4 p:last-child {
+                display: none;
+            }
+
+
+            /* fifth container */
+
+            #box5 {
+                display:flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: center;
+            }
             #button {
                 height: 100px;
                 width: 100px;
-                background-color: red;
-                color: white;
+                background-color: #ff6666;
+                color: #628395;
                 border-radius: 50px;
                 border-style: solid;
-                border-color: black;
+                border-color: #628395;
                 cursor: pointer;
             }
+            #box5 p {
+                font-family: 'Amatic SC', monospace;
+                color: #0c5460;
+                font-size: 1.5em;
+            }
+
+            /* sixth container */
+
+            #box6 {
+                background: #ffcccc;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-evenly;
+            }
+
 
 
 
@@ -139,12 +205,49 @@
                 </form>
             </div>
         </div>
-
-        <div class="flexy2" id="button" onmousedown="count()" onmouseup="count1()"></div>
+        <div class="flexy2">
             <div>
+                <p>"click" event</p>
+            </div>
+            <div id="box3" class="container container-three">
+                <div id="scale" onclick="scale(this)"><p>Keep clicking</p></div>
+            </div>
+        </div>
+
+        <div class="flexy2">
+            <div>
+                <p> "onmouse" events</p>
+            </div>
+            <div id="box4" class="container container-four">
+                <p id="hov1">Hover here</p>
+                <p id="quote">“Do. Or do not. There is no try.” <br>~ Yoda </p>
+            </div>
+        </div>
+
+        <div class="flexy2">
+            <div >
                 <p>"mousedown/up" events</p>
             </div>
-              <p id="counter"></p>
+            <div id="box5" class="container container-five">
+
+                <div id="button" onmousedown="count()" onmouseup="count1()" placeholder="Click Here"><p>Click Here<p></p></div>
+
+            </div>
+             <p id="counter"></p>
+         </div>
+         <div class="flexy2">
+             <div>
+                 <p>"keyboard" events</p>
+             </div>
+             <div id="box6" class="container container-six">
+                 <form>
+                     <input id="press" type="text" class="field" placeholder="Enter a string">
+                     <input id="release" type="text" class="field" placeholder="Enter a string">
+                 </form>
+
+             </div>
+
+         </div>
 
         </div>
         <script>
@@ -158,16 +261,37 @@
             let exFocus = document.querySelector('#focus');
 
             exFocus.addEventListener('focusin', function() {
-                exFocus.style.cssText = "background: #ff6666; transition: all .5s ease-in-out";
+                exFocus.style.cssText = "background: #ff6666; transition: all .5s ease-in-out;";
 
             });
 
             exFocus.addEventListener('focusout', function() {
-                exFocus.style.cssText = "background: #ffcccc; transition: all .5s ease-in-out";
+                exFocus.style.cssText = "background: #ffcccc; transition: all .5s ease-in-out;";
 
             });
 
             // click event in third container
+            function scale(elem) {
+                elem.classList.toggle("scale");
+            }
+
+            //onmouse events in fourth container
+            let moveon = document.querySelector('#box4');
+            let quote = document.querySelector('#quote');
+            let hov1 = document.querySelector('#hov1');
+
+            moveon.addEventListener('mouseover', function() {
+                quote.style.display = "inherit";
+                hov1.style.display = "none";
+            })
+
+            moveon.addEventListener('mouseout', function()  {
+                quote.style.display = "none";
+                hov1.style.display = "block";
+            })
+
+            // mouseup/down events fith container
+
             var num = 0;
             function count(){
                 num += 1;
@@ -179,6 +303,25 @@
             function count1() {
                 document.getElementById("button").style.opacity = "1";
             }
+
+            // keyboard events sixth container
+
+            let keypress = document.querySelector('#press');
+
+            keypress.addEventListener('keypress', function() {
+                keypress.style.cssText = "background: #ff6666; transition: background .5s ease-in-out; color: #0c5460;";
+            });
+
+            keypress.addEventListener('focusout', function() {
+                keypress.style.cssText = "background: #ffcccc; transition: background .5s ease-in-out;";
+            });
+
+            let release = document.querySelector('#release');
+
+            release.onkeyup = function() {
+                this.value = this.value.toUpperCase();
+                release.style.cssText = "color: #0c5460;";
+            };
 
 
 
