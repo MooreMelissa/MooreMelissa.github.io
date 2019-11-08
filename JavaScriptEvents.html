@@ -51,6 +51,12 @@
                 align-items: center;
                 justify-content: center;
             }
+            #box2 {
+                background: #ff6666;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-evenly;
+            }
             #spin {
                width: 5em;
                height: 5em;
@@ -68,11 +74,7 @@
             }
 
             /* second container */
-            #box2 {
-                background: #ff6666;
-                display: flex;
-                flex-flow: column;
-                justify-content: space-evenly;
+
             }
 
             form {
@@ -157,12 +159,12 @@
             let exFocus = document.querySelector('focus');
 
             exFocus.addEventListener('focusin', function() {
-                exFocus.style.cssText = "background: #990000; transition: all .5s ease-in-out";
+                exFocus.style.cssText = "background: #ffcccc; transition: all .5s ease-in-out";
 
             });
 
             exFocus.addEventListener('focusout', function() {
-                exFocus.syle.cssText = "background: #ff6666; transition: all .5 ease-in-out";
+                exFocus.syle.cssText = "background: #ff6666; transition: all .5s ease-in-out";
 
             });
             var num = 0;
