@@ -2,9 +2,186 @@
 <html lang="en-US">
     <head>
         <meta charset="utf-8">
-        <title>Maniputlating CSS with JavaScript</title>
+        <title>JavaScript Events</title>
+
+        <style>
+
+             h2{
+               text-align: center;
+               padding-top: .5em;
+             }
+
+             h3{
+               color: #628395;
+               font-size: 1.35em;
+               text-align: center;
+             }
+
+            p{
+              color: #96897b;
+              font-size: 1.2em;
+              text-align: center;
+            }
+
+           .flexy{
+              display: flex;
+              flex-flow: row wrap;
+              justify-content: space-around;
+              align-items: start;
+            }
+
+           .flexy2{
+              display: flex;
+              flex-flow: column nowrap;
+              align-items: center;
+              justify-items: center;
+              margin-bottom: 2em;
+            }
+
+            .container {
+               height: 15em;
+               width: 15em;
+               background-color: #93b7d2;
+               margin: 0 .5em;
+              }
+            /* first container */
+            #box1 {
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: center;
+            }
+            #spin {
+               width: 5em;
+               height: 5em;
+               background: #0c5460;
+            }
+
+
+          @keyframes spin {
+              from {
+                 transform: rotate(0deg);
+              }
+              to {
+                 transform: rotate(360deg);
+              }
+            }
+
+            /* second container */
+            #box2 {
+                background: #ff6666;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-evenly;
+            }
+
+            form {
+                text-align: center;
+            }
+
+            ::placeholder{
+                color: #C2C2C2;
+            }
+
+            input{
+                padding: .7em;
+                width: 9em;
+                text-align: center;
+                font-size: 1.1em;
+                margin: .5em 0 0 .5em;
+                background: #ff6666;
+                color: #C2C2C2;
+                border: solid 1px #C2C2C2;
+                outline: none;
+                box-sizing: content-box;
+            }
+
+            #button {
+                height: 100px;
+                width: 100px;
+                background-color: red;
+                color: white;
+                border-radius: 50px;
+                border-style: solid;
+                border-color: black;
+                cursor: pointer;
+            }
+
+
+
+        </style>
+
     </head>
     <body>
+        <h2 id="header"> JavaScript Events Especially for Mobile Devices, Animation, and Transition Events </h2>
+        <hr>
+
+        <h3>JavaScript events on traditional devices</h3>
+
+        <div class="flexy">
+            <div class="flexy2">
+                <div>
+                    <p>"onload" event</p>
+                </div>
+                <div id="box1" class="container container-one">
+                    <div id="spin"></div>
+               </div>
+            </div>
+
+        <div class="flexy2">
+            <div>
+                <p>"focus" event</p>
+            </div>
+            <div id="box2" class="container container-two">
+                <form>
+                    <input id="focus" type="text" class="field" placeholder="Click Here">
+                </form>
+            </div>
+        </div>
+
+        <div class="flexy2" id="button" onmousedown="count()" onmouseup="count1()"></div>
+            <div>
+                <p>"mousedown/up" events</p>
+            </div>
+              <p id="counter"></p>
+
+        </div>
+        <script>
+            //onload event in the first container
+            window.onload = function() {
+                let elem = document.getElementById('spin');
+                elem.style.cssText = "animation: spin 3s linear infinite"
+            }
+
+            // focus event in second container
+            let exFocus = document.querySelector('focus');
+
+            exFocus.addEventListener('focusin', function() {
+                exFocus.style.cssText = "background: #990000; transition: all .5s ease-in-out";
+
+            });
+
+            exFocus.addEventListener('focusout', function() {
+                exFocus.syle.cssText = "background: #ff6666; transition: all .5 ease-in-out";
+
+            });
+            var num = 0;
+            function count(){
+                num += 1;
+
+                document.getElementById("counter").innerHTML = "Click counter: " + num;
+                document.getElementById("button").style.opacity = ".2";
+            }
+
+            function count1() {
+                document.getElementById("button").style.opacity = "1";
+            }
+
+
+
+
+
+        </script>
     </body>
 
 </html>
