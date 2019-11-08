@@ -197,6 +197,41 @@
                 animation: spin 4s linear 400ms;
             }
 
+            // seventh container
+
+            #box7 {
+
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                z-index: 2;
+                border: solid 2px #0c5460;
+
+                /* property below disable non-standard gestures such as a double tap to zoom */
+                touch-action: manipulation;
+
+            }
+
+            #box7 p:first-child {
+                position:absolute;
+                z-index: -1;
+                font-family: 'Amatic SC', monospace;
+                color: #0c5460;
+                font-size: 5em;
+                opacity: .35;
+                top: 25%;
+                left: 20%;
+            }
+
+            #box7 p:last-child {
+                color: #0c5460;
+                font-size: 5em;
+            }
+
+
+
 
 
 
@@ -283,6 +318,28 @@
         </div>
 
         </div>
+        <h3>JavaScript events on mobile devices</h3>
+        <p>You need to use a mobile device</p>
+
+        <div class="flexy">
+            <div class="flexy2">
+                <div>
+                    <p>"touchstart" event</p>
+                </div>
+                <div id="box7" class="container container-one">
+                    <p>Tap Me</p>
+                    <p id="count">0</p>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
         <script>
             //onload event in the first container
             window.onload = function() {
@@ -331,6 +388,7 @@
 
                 document.getElementById("counter").innerHTML = "Click counter: " + num;
                 document.getElementById("button").style.opacity = ".2";
+
             }
 
             function count1() {
@@ -380,6 +438,26 @@
                 }, 1500);
 
               });
+            // touchstart event seventh container
+            let tstart = document.querySelector('#box7');
+            let number = document.querySelector('#count');
+            let counter = 0;
+
+            tstart.addEventListener('touchstart', function () {
+                // this step prevents a context menu to appear on long taps
+                tstart.oncontextmenu = function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    return false;
+                };
+
+                count++;
+                num.innerHTML = count.toString();
+            });
+
+            tstart.addEventListener('touchend', function() {
+                return false;
+            });
 
 
 
