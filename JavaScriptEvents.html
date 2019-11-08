@@ -150,7 +150,7 @@
         <script>
             //onload event in the first container
             window.onload = function() {
-                let elem = document.getElementById('spin');
+                let elem = document.querySelector('#spin');
                 elem.style.cssText = "animation: spin 3s linear infinite"
             }
 
@@ -163,9 +163,11 @@
             });
 
             exFocus.addEventListener('focusout', function() {
-                exFocus.syle.cssText = "background: #ffcccc; transition: all .5s ease-in-out";
+                exFocus.style.cssText = "background: #ffcccc; transition: all .5s ease-in-out";
 
             });
+
+            // click event in third container
             var num = 0;
             function count(){
                 num += 1;
