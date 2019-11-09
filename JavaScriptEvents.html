@@ -197,7 +197,7 @@
                 animation: spin 4s linear 400ms;
             }
 
-            // seventh container
+            /* seventh container */
 
             #box7 {
 
@@ -222,7 +222,7 @@
                 font-family: 'Amatic SC', monospace;
                 color: #0c5460;
                 font-size: 2.5em;
-                opacity: .35;
+                opacity: .45;
                 top: 55%;
                 left: 20%;
             }
@@ -230,6 +230,31 @@
             #box7 p:last-child {
                 color: #0c5460;
                 font-size: 5em;
+            }
+
+            /* eighth container */
+
+            #box8 {
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #box8 {
+                background: transparent;
+                border: solid 2px #0c5460;
+
+                /* prevents context menus to appear on long taps */
+
+                pointer-events: none;
+            }
+
+            #box8 p {
+                font-family: 'Amatic SC', monospace;
+                color: #0c5460;
+                font-size: 3em;
+                z-index: -2;
             }
 
 
@@ -328,12 +353,21 @@
                 <div>
                     <p>"touchstart" event</p>
                 </div>
-                <div id="box7" class="container container-one">
+                <div id="box7" class="container container-seven">
                     <p>Tap Me</p>
                     <p id="count">0</p>
 
                 </div>
             </div>
+            <div class="flexy2">
+                <div>
+                    <p>"touchstart/end" event</p>
+                </div>
+                <div id="box8" class="container container-eight">
+                    <p>Tap & Hold</p>
+                </div>
+            </div>
+
 
 
 
@@ -459,6 +493,24 @@
 
             tstart.addEventListener('touchend', function() {
                 return false;
+            });
+
+            // touchevent in eighth container
+            let tend = document.querySelector('#box8');
+
+            tend.addEventListener('touchstart', function() {
+                tend.style.cssText = "background: #93b7d2; transition: background .5s linear;";
+
+                // prevents defaults in behavior
+                tend.oncontextmenu = function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    return false;
+                };
+            });
+
+            tend.addEventListener('touchend', function() {
+                tend.style.cssText = "background: transparent; transition: background .5s linear;";
             });
 
 
