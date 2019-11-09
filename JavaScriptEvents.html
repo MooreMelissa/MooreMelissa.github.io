@@ -254,6 +254,22 @@
                 z-index: -2;
             }
 
+            /* ninth container */
+
+            #box9 {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+
+            }
+
+            #box9 p {
+                font-family: 'Amatic SC', monospace;
+                color: #0c5460;
+                font-size: 2.5em;
+                margin: 0;
+            }
+
 
 
 
@@ -364,13 +380,17 @@
                     <p>Tap & Hold</p>
                 </div>
             </div>
+            <div class="flexy2">
+                <div>
+                    <p>"touchmove" event</p>
+                </div>
+                <div id="box9" class="container container-nine">
+                    <p>Drag Around</p>
+                    <p id="coordinates">0, 0</p>
 
+                </div>
 
-
-
-
-
-
+            </div>
 
         </div>
         <script>
@@ -510,6 +530,34 @@
                 tend.style.cssText = "background: transparent; transition: background .5s linear;";
             });
 
+            // touchevent in ninth container
+            let mouseX = 0;
+            let mouseY = 0;
+            let boxMove = document.querySelector('#box9');
+            let output = document.querySelector('#coordinates');
+
+            // stop default behavior
+            boxMove.oncontextmenu = function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            };
+
+            boxMove.addEventListener('touchstart', function () {
+                return false;
+            });
+
+            boxMove.addEventListener('touchend', function () {
+                return false;
+            });
+
+            boxMove.addEventListener('touchmove', function(event) {
+                // pointer coordinates
+                mouseX = event.changedTouches[0].pageX.toFixed();
+                mouseY = event.changedTouches[0].pageY.toFixed();
+
+                output.innerHTML = mouseX + ', ' + mouseY;
+            });
 
 
         </script>
