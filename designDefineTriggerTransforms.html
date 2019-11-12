@@ -8,6 +8,9 @@
             body {
                 background-color: antiquewhite;
             }
+            h2 {
+                text-align: center;
+            }
             h3 {
                 color: #628395;
                 font-size: 1.35em;
@@ -98,8 +101,16 @@
         <p>These functions can manipulate three dimensional axis: X, Y, and Z.</p>
         <p>Let's take a look at <i>rotate3D()</i> perspective</p>
         <p>Hover over the shape below:</p>
+        <br><br>
         <div class="flex">
             <object data="pictures/chains.png" id="chains"  class="bigger"></object>
+        </div>
+        <br><br>
+        <p>Finally, check out what <i>scale3D()</i> and <i>translate3D() </i>do.</p>
+        <p>Hover over the shape below:</p>
+        <br><br>
+        <div class="flex">
+            <object data="pictures/atom.png" id="atom" class="bigger"></object>
         </div>
         <br><br>
 
@@ -232,7 +243,18 @@
             });
 
             chains.addEventListener("mouseout", function() {
-                chains.style.cssText = "transform: perspective(0px) rotate3d(0,0,0,0deg); transition:transform 1s ease;";
+                chains.style.cssText = "transform: perspective(0px) rotate3d(0,0,0,0deg); transition: transform 1s ease;";
+            });
+
+            //target atom icon
+            let atom = document.querySelector("#atom");
+
+            atom.addEventListener("mouseover", function() {
+                atom.style.cssText = "transform: scale3D(.75,0.25,.5) translate3D(6em,0,0); transition: transform 1s ease;";
+            });
+
+            atom.addEventListener("mouseout", function() {
+                atom.style.cssText = "transform: none; transition: transform 1s ease;";
             });
 
 
