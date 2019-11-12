@@ -4,12 +4,241 @@
         <meta charset="utf-8">
         <title>Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries</title>
 
+        <style>
+            body {
+                background-color: antiquewhite;
+            }
+            h3 {
+                color: #628395;
+                font-size: 1.35em;
+            }
+            p {
+                color: #96897b;
+                font-size: 1.2em;
+            }
+            i {
+                color: red;
+            }
+            .object {
+                width: 4.5em;
+            }
+            .bigger {
+                width: 8.5em;
+            }
+            div.flex {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-evenly;
+            }
+            div#wrap {
+                padding-left: 3em;
+            }
+            div#box {
+                width: 5em;
+                height:5em;
+                background-color: #ffad92;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #628395;
+            }
+            span {
+                color: #628395;
+            }
+
+
+
+        </style>
+
 
     </head>
 
     <body>
+        <h2 id="header"> Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries</h2>
+        <hr>
+        <h3>2D Transform Functions</h3>
+        <p>There are four main 2D transform functions: scale, rotate, skew, translate.</p>
+        <p>Hover over the following shapes to see how the <i>scale()</i> function works:</p>
+        <br><br><br>
+        <div class="flex">
+            <object  data="pictures/batman1.png" id="batman"  class="object"></object>
+            <object  data="pictures/spider1.png" id="spider"  class="object"></object>
+
+        </div>
+        <br><br><br>
+        <p>Hover over the following shapes to see how the <i>rotate()</i> function works:</p>
+        <div class="flex">
+            <object data="pictures/triangle.png" id="triangle"  class="object"></object>
+            <object data="pictures/pin.png" id="pin"  class="object"></object>
+
+        </div>
+        <br>
+        <p>Hover over the following shapes to see how the <i>translate()</i>function works:</p>
+        <br><br>
+        <div class="flex">
+            <object data="pictures/bird.png" id="bird"  class="object"></object>
+            <object data="pictures/fish.png" id="fish"  class="object"></object>
+
+        </div>
+        <br>
+        <p> Hover over the following shapes to see how the <i>skew()</i> function works:</p>
+        <div class="flex">
+            <object data="pictures/eyes.png" id="eyes"  class="object"></object>
+            <object data="pictures/robot.png" id="robot"  class="object"></object>
+        </div>
+        <br>
+        <p>Now let's mix multiple transform functions:</p>
+        <br><br>
+        <div id="wrap">
+            <div id="box"><span>Hooray!!!</span></div>
+        </div>
+        <br><br>
+        <h3>3D Transform Functions</h3>
+        <p>These functions can manipulate three dimensional axis: X, Y, and Z.</p>
+        <p>Let's take a look at <i>rotate3D()</i> perspective</p>
+        <p>Hover over the shape below:</p>
+        <div class="flex">
+            <object data="pictures/chains.png" id="chains"  class="bigger"></object>
+        </div>
+        <br><br>
 
 
+        <script>
+            // 2D TRAnsformations
+
+            //target batman icon
+            let batman = document.querySelector("#batman");
+
+            // add event listener to trigger the scale transform
+            batman.addEventListener("mouseover", function() {
+                batman.style.cssText = "transform: scale(2.5); transition: transform .3 ease-in;";
+            });
+
+            // add an event listener to scale back
+            batman.addEventListener("mouseout", function() {
+                batman.style.transform = "none";
+            });
+
+            //target spider icon
+            let spider = document.querySelector("#spider");
+
+            // add event listener to trigger the scale transform
+            spider.addEventListener("mouseover", function() {
+                spider.style.cssText = "transform: scale(-2); transition: transform 1s ease-in-out;";
+            });
+
+            // add event listener to scale back
+            spider.addEventListener("mouseout", function() {
+                spider.style.transform = "none";
+            });
+
+            // target triangle
+            let triangle = document.querySelector("#triangle");
+
+            // add event listener
+            triangle.addEventListener("mouseover", function() {
+                triangle.style.cssText = "transform: rotate(360deg); transition: transform 1s linear;";
+            });
+
+            // add event listener to go back
+            triangle.addEventListener("mouseout", function() {
+                triangle.style.cssText = "none";
+            });
+
+            // target pushpin
+            let pin = document.querySelector("#pin");
+
+            // add event listener
+            pin.addEventListener("mouseover", function() {
+                pin.style.cssText = "transform: rotate(-360deg); transition: transform 1s linear;";
+            });
+
+            //add event listenr to go back
+            pin.addEventListener("mouseout", function() {
+                pin.style.cssText = "none";
+            });
+
+            // target playarrow
+            let bird = document.querySelector("#bird");
+
+            //add event listener trigger translation
+            bird.addEventListener("mouseover", function() {
+                bird.style.cssText = "transform: translateY(-3.5em); transform 2s ease;";
+            });
+
+            // add an event listener go back
+            bird.addEventListener("mouseout", function() {
+                bird.style.cssText = "transform: translateY(0em), transition 1s ease;";
+            });
+
+            // target fish
+            let fish = document.querySelector("#fish");
+
+            // add event listener
+            fish.addEventListener("mouseover", function() {
+                fish.style.cssText = "transform: translateX(-5em); transition: transform 2s ease;";
+            });
+
+            // go back initial state
+            fish.addEventListener("mouseout", function() {
+                fish.style.cssText = "transform: translateX(0em); transition: transform 1s ease;";
+            });
+
+            // target eyes
+            let eyes = document.querySelector("#eyes");
+
+            // add eventlistener to trigger skew
+            eyes.addEventListener("mouseover", function() {
+                eyes.style.cssText = "transform: skewX(35deg); transition: transform 1s ease;";
+            });
+
+            // go back
+            eyes.addEventListener("mouseout", function() {
+                eyes.style.cssText = "transform: skewX(0deg); transition: transform 1s ease;";
+            });
+
+            // target robot
+            let robot = document.querySelector("#robot");
+
+            // add eventlistener skew
+            robot.addEventListener("mouseover", function() {
+                robot.style.cssText = "transform: skewY(30deg); transition: transform 1s ease;";
+            });
+
+            // go back
+            robot.addEventListener("mouseout", function() {
+                robot.style.cssText = "transform: skewY(0deg); transition: transform 1s ease;";
+            });
+
+            // target the box to transform
+            let box = document.querySelector("#box");
+
+            box.addEventListener("mouseover", function() {
+                box.style.cssText = "transform: scale(1.25) translateX(6em) rotate(180deg); transition: transform 2s ease;";
+            });
+
+            box.addEventListener("mouseout", function() {
+                box.style.cssText = "transform: scale(1) translateX(0em) rotate(0deg); transition: transform 2s ease;";
+            });
+
+            // 3D transformations
+
+            // target chains
+            let chains = document.querySelector("#chains");
+
+            chains.addEventListener("mouseover", function() {
+                chains.style.cssText = "transform: perspective(90px) rotate3d(1,1,1,65deg); transition: transform 1s ease;";
+            });
+
+            chains.addEventListener("mouseout", function() {
+                chains.style.cssText = "transform: perspective(0px) rotate3d(0,0,0,0deg); transition:transform 1s ease;";
+            });
+
+
+
+
+        </script>
 
     </body>
 
