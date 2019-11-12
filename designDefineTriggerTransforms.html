@@ -226,7 +226,8 @@
             let box = document.querySelector("#box");
 
             box.addEventListener("mouseover", function() {
-                box.style.cssText = "transform: scale(1.25) translateX(6em) rotate(180deg); transition: transform 2s ease;";
+                //box.style.cssText = "transform: scale(1.25) translateX(6em) rotate(180deg); transition: transform 2s ease;";
+                box.style.cssText = "transform: matrix(1.25, 1, 1, 1.25, 6, 6) rotate(180deg); transition: transform 2s ease;";
             });
 
             box.addEventListener("mouseout", function() {
@@ -250,7 +251,7 @@
             let atom = document.querySelector("#atom");
 
             atom.addEventListener("mouseover", function() {
-                atom.style.cssText = "transform: scale3D(.75,0.25,.5) translate3D(6em,0,0); transition: transform 1s ease;";
+                atom.style.cssText = "transform: scale3d(.75,0.25,.5) translate3d(6em,0,0); transition: transform 1s ease;";
             });
 
             atom.addEventListener("mouseout", function() {
