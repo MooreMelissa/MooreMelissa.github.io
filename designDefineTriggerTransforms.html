@@ -51,6 +51,16 @@
             }
 
 
+            .hover {
+                transition: all 1s ease-in-out;
+                width: 300px;
+            }
+
+            .hover:hover {
+                transform: scale(1.50);
+            }
+
+
 
         </style>
 
@@ -113,6 +123,14 @@
             <object data="pictures/atom.png" id="atom" class="bigger"></object>
         </div>
         <br><br>
+        <h3>Real world example</h3>
+        <p>Many photo websites use to indicate when a mouse is hovering an image.</p>
+        <p>We can use transition to make the transform smooth.</p>
+        <br><br>
+        <img class="hover" src="pictures/mtTimp.jpg" alt="Mountain Winterscene">
+        <hr>
+
+
 
 
         <script>
