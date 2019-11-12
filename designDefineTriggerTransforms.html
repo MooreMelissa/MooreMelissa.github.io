@@ -60,6 +60,53 @@
                 transform: scale(1.50);
             }
 
+            div.flexy {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-evenly;
+            }
+
+            div.picture {
+                width: 250px;
+                padding: 10px 10px 20px 10px;
+                background-color: white;
+                box-shadow: 10px 10px 5px #aaaaaa;
+            }
+
+            .picture:hover {
+                transition: all 1s ease-in-out;
+                transform: perspective(300px);
+                transform: scale(1.50);
+
+            }
+            div.pic1 {
+                float:left;
+
+                transform: rotate(7deg);
+
+            }
+            div.pic2 {
+                float:left;
+                transform: rotate(-8deg);
+
+            }
+            div.pic3 {
+
+
+                transform: rotate(7deg);
+            }
+            div.pic4 {
+
+
+                transform: rotate(-8deg);
+            }
+            div.pic5 {
+
+
+                transform: rotate(10deg);
+            }
+
+
 
 
         </style>
@@ -126,10 +173,38 @@
         <br><br>
         <h3>Real world example</h3>
         <hr>
-        <p>Many photo websites use to indicate when a mouse is hovering an image.</p>
+        <p>Many photo websites may change the scale of the photo to indicate when a mouse is hovering over the image.</p>
         <p>We can use transition to make the transform smooth.</p>
         <br><br>
         <img class="hover" src="pictures/mtTimp.jpg" alt="Mountain Winterscene">
+        <br><br><br><br>
+
+        <p>Or maybe looking at a gallery of photos</p>
+        <br><br><br><br><br>
+        <div class="flexy">
+        <div class="picture pic1">
+            <img src="pictures/boysbowling2019.png" alt="Boys in Halloween Costumes" width="250px" height="220px">
+            <p class="caption">Boys at Bowling Halloween Party</p>
+        </div>
+        <div class="picture pic2">
+            <img src="pictures/halloween2019.jpg" alt="Family dressed in costumes" width="250px" height="220px">
+            <p class="caption">Jessie's Family Halloween 2019</p>
+        </div>
+        <div class="picture pic3">
+            <img src="pictures/popins.JPG" alt="Family costumes are from Mary Poppins" width="250px" height="220px">
+            <p class="caption">Jacob's Family Halloween 2019</p>
+        </div>
+        </div>
+        <div class="flexy">
+        <div class="picture pic4">
+            <img src="pictures/pumpkins2019.png" alt="carved pumpkins" width="250px" height="220px">
+            <p class="caption">Finished Carving the Pumpkins</p>
+        </div>
+        <div class="picture pic5">
+            <img src="pictures/girlsbowling2019.png" alt="Girls in Halloween Costumes" width="250px" height="220px">
+            <p class="caption">Girls at Bowling Halloween Party</p>
+        </div>
+        </div>
         <hr>
 
 
