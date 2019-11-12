@@ -50,7 +50,6 @@
                 color: #628395;
             }
 
-
             .hover {
                 transition: all 1s ease-in-out;
                 width: 300px;
@@ -75,7 +74,7 @@
 
             .picture:hover {
                 transition: all 1s ease-in-out;
-                transform: perspective(300px);
+                transform: perspective(800px);
                 transform: scale(1.50);
 
             }
@@ -158,9 +157,10 @@
         <hr>
         <p>These functions can manipulate three dimensional axis: X, Y, and Z.</p>
         <p>Let's take a look at <i>rotate3D()</i> perspective</p>
-        <p>Hover over the shape below:</p>
+        <p>Hover over each shape below: </p>
         <br><br>
         <div class="flex">
+            <object data="pictures/smile.png" id="smile" class="bigger"></object>
             <object data="pictures/chains.png" id="chains"  class="bigger"></object>
         </div>
         <br><br>
@@ -195,6 +195,7 @@
             <p class="caption">Jacob's Family Halloween 2019</p>
         </div>
         </div>
+        <br><br>
         <div class="flexy">
         <div class="picture pic4">
             <img src="pictures/pumpkins2019.png" alt="carved pumpkins" width="250px" height="220px">
@@ -330,6 +331,18 @@
             });
 
             // 3D transformations
+
+            // target smile
+            let smile = document.querySelector("#smile");
+
+            smile.addEventListener("mouseover", function() {
+                smile.style.cssText = "transform: rotate3d(1,1,1,360deg); transform-stylye: preserve-3d; transition: transform 1s ease;";
+
+            });
+
+            smile.addEventListener("mouseout", function() {
+                smile.style.cssText = "none;";
+            });
 
             // target chains
             let chains = document.querySelector("#chains");
