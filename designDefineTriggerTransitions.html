@@ -4,10 +4,255 @@
         <meta charset="utf-8">
         <title> CSS3 Transitions without Custom Libraries</title>
 
+        <style>
+
+            h3 {
+                color: darkslategrey;
+                font-family: lato;
+                font-size: 25px;
+                font-weight: 200;
+                text-align: center;
+            }
+
+            /*background Rectangle */
+            .wrap {
+                margin: 50px auto;
+                background-color: grey;
+                width: 77%;
+                border-radius: 10px;
+                height: 225px;
+            }
+
+            /* changes position of objects inside of rectangles*/
+            .cont {
+                display: inline-block;
+                width: 150px;
+                margin-left: 15%;
+            }
+
+            /*box class modifies the siz and shape of boxes*/
+            .box {
+                border-radius: 20px;
+                height: 50px;
+                margin: 25px auto;
+                width: 100px;
+            }
+
+            /*simple transition/transform*/
+            .wrap:hover .box {
+                transform: translate(100px);
+            }
+
+            .box1 {
+                background-color: darkred;
+            }
+
+            .box2 {
+                background-color: darkorange;
+                transition: all 1.5s;
+            }
+
+            /*rotating square*/
+            #one {
+                width: 50px;
+                height: 50px;
+                margin-left: 15%;
+                border-radius: 20%;
+                background-color: black;
+                transition: background 1s ease-in-out 5s;
+            }
+
+            .wrap:hover #one {
+                width: 200px;
+                height: 200px;
+                transition:all 2s;
+                transform: rotate(720deg);
+                background-color: white;
+            }
+
+            .wrap2 {
+                margin: 50px auto;
+                background-color: grey;
+                width: 77%;
+                border-radius: 25px;
+                padding: 10px;
+                height: 225px;
+            }
+
+            .cont2 {
+                display: inline-block;
+                width: 150px;
+                height: 300px;
+                padding-left: 33px;
+            }
+
+            .click {
+                border-radius: 50%;
+                height: 35px;
+                margin: 50px auto;
+                width: 35px;
+                opacity: 1;
+            }
+
+            .click:active {
+                transform: scale(3.5);
+                opacity: .5;
+            }
+
+            .click1 {
+                background-color: darkred;
+                border: solid white 1px;
+                opacity: 333ms;
+            }
+
+            .click2 {
+                background-color: red;
+                border: solid white 1px;
+                transition: 1s;
+
+            }
+
+            .click3 {
+                background-color: orange;
+                border: solid white 1px;
+                transition: 2s;
+            }
+
+            .circles {
+                margin: 50px auto;
+                padding: 25px;
+                background-color: grey;
+                width: 77%;
+                border-radius: 33px;
+            }
+
+
+
+            .circle,
+            .circle0,
+            .circle1,
+            .circle2,
+            .circle3,
+            .circle4,
+            .circle5 {
+                border-radius: 50%;
+                height: 45px;
+                width: 45px;
+                margin: 10px;
+                margin-left: 60px;
+            }
+
+            /* controls how far the circles move*/
+
+
+            .circles:hover .circle,
+            .circles:hover .circle0,
+            .circles:hover .circle1,
+            .circles:hover .circle2,
+            .circles:hover .circle3,
+            .circles:hover .circle4,
+            .circles:hover .circle5 {
+
+                transform: translateX(425px);
+            }
+
+            .circle0 {
+                background-color: black;
+                transition: 2.5s linear;
+            }
+
+            .circle1 {
+                background-color: darkred;
+                transition: all 1.5s ease;
+            }
+
+            /* cubic-bezier function allows you to set specific times for actions*/
+            .circle2 {
+                background-color: red;
+                transition: all 3.0s cubic-bezier(.80, -.3, .98, 0);
+            }
+
+            .circle3 {
+                background-color: orange;
+                transition: all 1.5s ease-out;
+            }
+
+            .circle4 {
+                background-color: gold;
+                transition: all 2s ease-in-out;
+            }
+
+            .circle5 {
+                background-color: white;
+                transition: all 1.5s cubic-bezier(0.65,-.2, 0.50, 1);
+            }
+
+
+        </style>
+
+
 
     </head>
 
     <body>
+
+        <h2 id="head">Designing, Defining, and Triggering CSS3 Transition without Custom Libraries</h2>
+        <hr>
+
+        <h3>Each box shows a different transition effect.</h3>
+
+        <div class="wrap">
+            <div class="cont">
+                <h3>Transform Only</h3>
+                <div class="box1 box"></div>
+
+            </div>
+
+            <div class="cont">
+                <h3>Transform and Transition</h3>
+                <div class="box2 box"></div>
+            </div>
+
+        </div>
+
+        <h3>Rotation Transition</h3>
+        <div class="wrap">
+            <div id="one"></div>
+        </div>
+
+        <h3>CSS3 Active Method</h3>
+        <div class="wrap2">
+            <div class="cont2">
+                <h3>.5s</h3>
+                <div class="click click1"></div>
+            </div>
+
+            <div class="cont2">
+                <h3>1s</h3>
+                <div class="click click2"></div>
+
+            </div>
+
+            <div class="cont2">
+                <h3>2s</h3>
+                <div class="click click3"></div>
+
+           </div>
+
+        </div>
+
+
+        <h3>Using different Transition rule-sets</h3>
+        <div class="circles">
+            <div class="circle0"></div>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+            <div class="circle5"></div>
+
+        </div>
+
 
 
 
