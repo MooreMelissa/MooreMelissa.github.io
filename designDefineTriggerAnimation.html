@@ -164,26 +164,36 @@
             }
             #owl:hover {
                 animation: bounce 8s infinite;
+                animation-timing-function: ease;
             }
 
             @keyframes bounce {
+                0% {
+                    transform: scale(1,1) translateY(0);
+                }
                 15% {
-                    transform: translateY(-40px);
+                    /*transform: translateY(-40px);*/
+                    transform: scale(1.1,.9) translateY(-40px);
                 }
                 30% {
-                    transform: translateY(25px);
+                    /*transform: translateY(20px);*/
+                    transform: scale(.9,1.1) translateY(25px);
                 }
                 50% {
-                    transform: translateY(-30px);
+                    /*transform: translateY(-30px);*/
+                    transform: scale(1,1) translateY(-30px);
                 }
                 65% {
-                    transform: translateY(15px);
+                    /*transform: translateY(15px);*/
+                    transform: scale(.9,1.1) translateY(0px);
                 }
                 80% {
-                    transform: translateY(-60px);
+                    /*transform: translateY(-60px);*/
+                    transform: scale(1.1,.9) translateY(-60px);
                 }
                 100% {
-                    transform: translateY(20px);
+                    /*transform: translateY(20px);*/
+                    transform: scale(1,1) translateY(20px);
 
                 }
             }
@@ -211,26 +221,38 @@
 
             }
             #fish {
+                position: relative;
                 width: 30px;
                 display: block;
-
-                margin-left: 25%;
+                top: 5%;
+                animation: fishSwim 8s infinite;
+                animation-duration: ease;
 
             }
             #fish1 {
+                position: relative;
                 width: 50px;
                  display: block;
-                margin-left: 40%;
-               padding-left: 20%;
+
+
+
+                animation: fishSwim 6s infinite;
+                animation-duration: ease;
 
 
             }
             #fish2 {
+                position:relative;
                 width: 20px;
                 display: block;
-                margin-left: 7%;
-                bottom: 90%;
+                bottom: 60%;
+
+
                 transform: rotateY(180deg);
+                animation: fishSwim 4s infinite;
+                animation-duration: ease;
+
+
 
 
             }
@@ -261,19 +283,19 @@
 
 
                     }
-                }
+
                 10%{
                    transform: translateY(455%);
                    opacity: 0.5;
 
                     }
-                }
+
                 90% {
                     transform: translateY(40%);
                     opacity: 0.5;
 
                     }
-               }
+
                95% {
                    transform: translateY(35%);
                    opacity: 0.25;
@@ -281,6 +303,37 @@
                100% {
                   transform: translateY(30%);
                   opacity: 0;
+               }
+          }
+            @keyframes fishSwim {
+                0% {
+                    transform: translateX(300%);
+
+                }
+                5% {
+                   transform: translateX(285%);
+
+                    }
+
+                10%{
+                   transform: translateX(255%);
+
+
+                    }
+
+                90% {
+                    transform: translateX(40%);
+
+
+                    }
+
+               95% {
+                   transform: translateX(25%);
+
+               }
+               100% {
+                  transform: translateX(10%);
+
                }
           }
 
