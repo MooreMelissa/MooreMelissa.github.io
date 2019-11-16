@@ -224,8 +224,8 @@
                 position: relative;
                 width: 30px;
                 display: block;
-                top: 5%;
-                animation: fishSwim 8s infinite;
+                top: 3%;
+                animation: fishSwim 12s infinite;
                 animation-duration: ease;
 
             }
@@ -233,10 +233,8 @@
                 position: relative;
                 width: 50px;
                  display: block;
-
-
-
-                animation: fishSwim 6s infinite;
+                top: 3%;
+                animation: fishSwim 8s infinite;
                 animation-duration: ease;
 
 
@@ -246,11 +244,12 @@
                 width: 20px;
                 display: block;
                 bottom: 60%;
+                left: 50%;
+
+                animation: litfishSwim 8s infinite;
+                animation-duration: linear;
 
 
-                transform: rotateY(180deg);
-                animation: fishSwim 4s infinite;
-                animation-duration: ease;
 
 
 
@@ -279,9 +278,6 @@
                 5% {
                    transform: translateY(485%);
                    opacity: 0.25;
-
-
-
                     }
 
                 10%{
@@ -308,34 +304,78 @@
             @keyframes fishSwim {
                 0% {
                     transform: translateX(300%);
+                    opacity: 0;
 
                 }
                 5% {
                    transform: translateX(285%);
+                    opacity: 0.25;
 
                     }
 
                 10%{
                    transform: translateX(255%);
+                    opacity: 0.5;
 
 
                     }
 
                 90% {
                     transform: translateX(40%);
+                    opacity: 0.5;
 
 
                     }
 
                95% {
                    transform: translateX(25%);
+                   opacity: 0.25;
 
                }
                100% {
                   transform: translateX(10%);
+                   opacity: 0;
 
                }
           }
+            @keyframes litfishSwim {
+                0% {
+                    transform: translateX(0%)
+                    opacity: 0;
+
+                }
+                5% {
+                   transform: translateX(35%);
+                    opacity: 0.25;
+
+                    }
+
+                10%{
+                   transform: translateX(65%);
+                    opacity: 0.5;
+
+
+                    }
+
+                90% {
+                    transform: translateX(85%);
+                    opacity: 0.5;
+
+
+                    }
+
+               95% {
+                   transform: translateX(105%);
+                   opacity: 0.25;
+
+               }
+               100% {
+                  transform: translateX(200%);
+                   opacity: 0;
+
+               }
+          }
+
 
 
         </style>
@@ -393,7 +433,7 @@
                     <div class="bubble bubble-3"></div>
                     <object data="pictures/fish.png" id="fish"></object>
                     <object data="pictures/fish.png" id="fish1"></object>
-                    <object data="pictures/fish.png" id="fish2"></object>
+                    <object data="pictures/stripefish.png" id="fish2"></object>
 
                 </div>
 
