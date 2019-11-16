@@ -154,20 +154,138 @@
                   50% { left:25%; }
                   100% { left:75%; }
              }
+            #owl {
+                width: 100px;
+                height: 100px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 47%;
+            }
+            #owl:hover {
+                animation: bounce 8s infinite;
+            }
+
+            @keyframes bounce {
+                15% {
+                    transform: translateY(-40px);
+                }
+                30% {
+                    transform: translateY(25px);
+                }
+                50% {
+                    transform: translateY(-30px);
+                }
+                65% {
+                    transform: translateY(15px);
+                }
+                80% {
+                    transform: translateY(-60px);
+                }
+                100% {
+                    transform: translateY(20px);
+
+                }
+            }
+
+            .bubble-1 {
+                left: 15%;
+                animation: bubbleUp 8s infinite;
+
+            }
+
+            .bubble-2 {
+                left: 45%;
+                animation: bubbleUp 5.5s infinite;
+            }
+
+            .bubble-3 {
+                left: 75%;
+                animation: bubbleUp 8s infinite;
+
+            }
+
+            #box4 {
+                background: linear-gradient(135deg, #93b7d2, #31393c);
+                position: relative;
+
+            }
+            #fish {
+                width: 30px;
+                display: block;
+
+                margin-left: 25%;
+
+            }
+            #fish1 {
+                width: 50px;
+                 display: block;
+                margin-left: 40%;
+               padding-left: 20%;
+
+
+            }
+            #fish2 {
+                width: 20px;
+                display: block;
+                margin-left: 7%;
+                bottom: 90%;
+                transform: rotateY(180deg);
+
+
+            }
+            .bubble {
+                position: relative;
+                border: 1px solid black;
+                z-index: 1;
+                width: 25px;
+                height: 25px;
+                bottom: 0;
+                background-color: #0080ff;
+                opacity: 0;
+                border-radius: 100%;
+                box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3), inset 0px 10px 30px 5px rgba(255, 255, 255, 0.7);
 
 
 
+            }
+            @keyframes bubbleUp {
+                0% {
+                    transform: translateY(500%);
+                    opacity: 0;
+                }
+                5% {
+                   transform: translateY(485%);
+                   opacity: 0.25;
 
 
 
+                    }
+                }
+                10%{
+                   transform: translateY(455%);
+                   opacity: 0.5;
+
+                    }
+                }
+                90% {
+                    transform: translateY(40%);
+                    opacity: 0.5;
+
+                    }
+               }
+               95% {
+                   transform: translateY(35%);
+                   opacity: 0.25;
+               }
+               100% {
+                  transform: translateY(30%);
+                  opacity: 0;
+               }
+          }
 
 
         </style>
-
-
-
-
-
 
 
     </head>
@@ -214,20 +332,24 @@
 
 
 
+            <div class="flex2">
+                <h3> Onload trigger</h3>
+                <div id="box4" class="container container-four">
+                    <div class="bubble bubble-1"></div>
+                    <div class="bubble bubble-2"></div>
+                    <div class="bubble bubble-3"></div>
+                    <object data="pictures/fish.png" id="fish"></object>
+                    <object data="pictures/fish.png" id="fish1"></object>
+                    <object data="pictures/fish.png" id="fish2"></object>
+
+                </div>
+
+            </div>
+
+
+
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </body>
