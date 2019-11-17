@@ -5,6 +5,9 @@
         <title>CSS3 Transitions, Animations, and Trigger with JavaScript</title>
 
         <style>
+            body {
+                background-color: antiquewhite;
+            }
             h2 {
               text-align: center;
               padding-top: .5em;
@@ -33,11 +36,200 @@
               background-color: #93b7d2;
               margin-top: .5em ;
           }
-          .container-one, .container-two {
+          .container-one, .container-two, .container-three {
               display: flex;
               justify-content: center;
               align-items: center;
           }
+          .container-four{
+              height: 25em;
+              width: 25em;
+              background: #ffffff;
+           }
+
+          /* Animation in the first square */
+         #change, #changes, #vibe {
+
+              height: 5em;
+              width: 5em;
+              background-color: #0c5460;
+              border-radius: 50%;
+         }
+
+        @keyframes morphCircle{
+             0% {
+                border-radius: 50%;
+                background-color: #e17607;
+            }
+             50% {
+                border-radius: 0%;
+                background-color: white;
+                transform: rotate(0deg);
+            }
+            75% {
+               border-radius: 0%;
+               background-color: white;
+               transform: rotate(-90deg);
+            }
+            100% {
+              border-radius: 50%;
+              background-color: #e17607;
+              transform: rotate(-90deg);
+           }
+        }
+            /* Animation split in half*/
+            #box2 {
+                z-index: 2;
+                cursor: pointer;
+            }
+
+            .half-circle {
+                height: 5em;
+                width: 2.5em;
+                background-color: #0c5460;
+            }
+            #chick {
+                display: block;
+
+                opacity: 0;
+                width: 30px;
+                height: 30px;
+
+            }
+
+            @keyframes chicken {
+                0% {
+                    opacity: 1;
+                    transform: translate(-50px,50px);
+                }
+                25% {
+                    opacity: 1;
+                    transform: translate(-35px,70px);
+                }
+                50% {
+                    opacity: .8;
+                    transform: translate(-65px, 85px);
+                }
+                75% {
+                    opacity: .4;
+                    transform: translate(-50px, 105px);
+
+                }
+                100% {
+                    opacity: 0;
+                    transform: translate(-55px, 120px);
+
+
+                }
+            }
+
+
+            @keyframes leftHalf {
+                0% {
+                    transform: translate(0%);
+                }
+                25% {
+                    transform: translate(0%);
+                }
+                30% {
+                    transform: translate(-10%);
+                }
+                40 {
+                    transform: translate(-25%);
+                }
+                50% {
+                    transform: translate(-50%);
+                }
+                70% {
+                    transform: translate(-50%);
+                }
+                80% {
+                    transform: translate(-25%);
+                }
+                90% {
+                    transform: translate(-10%);
+                }
+                100% {
+                    transform: translate(0%);
+
+                }
+            }
+
+            .left {
+                border-bottom-left-radius: 5em;
+                border-top-left-radius: 5em;
+            }
+
+            @keyframes rightHalf {
+                0% {
+                    transform: translate(0%);
+                }
+                25% {
+                    transform: translate(0%);
+                }
+                30% {
+                    transform: translate(10%);
+                }
+                40 {
+                    transform: translate(25%);
+                }
+                50% {
+                    transform: translate(50%);
+                }
+                70% {
+                    transform: translate(50%);
+                }
+                80% {
+                    transform: translate(25%);
+                }
+                90% {
+                    transform: translate(10%);
+                }
+                100% {
+                    transform: translate(0%);
+
+                }
+            }
+
+            .right {
+                border-bottom-right-radius: 5em;
+                border-top-right-radius: 5em;
+            }
+
+            /* pulse circle */
+
+
+            @keyframes vibes {
+                0% {
+                 transform: scale(1);
+               }
+               45% {
+                 transform: scale(1);
+              }
+              46% {
+                  background-color: red;
+                 transform: scale(2.35);
+              }
+              47% {
+                transform: scale(1);
+              }
+              59% {
+
+                transform: scale(1);
+             }
+             60% {
+                 background-color: yellow;
+               transform: scale(2.05);
+             }
+             61% {
+               transform: scale(1);
+             }
+             100% {
+                 background-color: orange;
+               transform: scale(1);
+            }
+        }
+
 
 
 
@@ -75,11 +267,127 @@
             <div id="box2" class="container container-two">
                 <div id="splitLh" class="half-circle left"></div>
                 <div id="splitRh" class="half-circle right"></div>
+                <object id="chick" data="pictures/chick.png"></object>
+            </div>
+
+        </div>
+        <br><br>
+
+        <p>This circle will pulse within the box while hovering over it.</p>
+        <div class="flex">
+            <div class="container container-three">
+                <div id="vibe" class="circleVibe"></div>
 
             </div>
 
         </div>
         <br><br>
+
+        <p>Click on the hamburger menu</p>
+        <div class="flex">
+            <div class="container container-four">
+                <div id="menu" class="exNav" onclick="hamNav()">
+                    <div class="navMenu" id="stayPut">
+                        <div class="markers">
+                            <div class="mark1"></div>
+                            <div class="mark2"></div>
+                            <div class="mark3"></div>
+                        </div>
+                        <div class="nav">
+                            <a class="mlink" href="#">One</a>
+                            <a class="mlink" href="#">Two</a>
+                            <a class="mlink" href="#">Three</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <script>
+            //target item in first square
+            let change = document.querySelector("#change");
+
+            // add event listener to trigger animation
+            change.addEventListener("mouseover", function() {
+                change.style.animation = "morphCircle 4s linear infinite";
+            });
+
+            // add event listenr to stop
+            change.addEventListener("mouseout", function() {
+                change.style.animation = "";
+
+            });
+
+            // target second square
+            let changes = document.querySelector("#changes");
+
+            // add event listenr to trigger transition
+            changes.addEventListener("mouseover", function() {
+                changes.style.cssText = "border-radius: 0; background-color: white; transform: rotate(180deg)";
+                changes.style.transition = "border-radius 1s linear, background-color 1s linear, transform 1s linear";
+
+            });
+
+            // event listenr to stop
+            changes.addEventListener("mouseout", function() {
+                changes.style.cssText = "height: 5em; width: 5em; background-color: #0c5460; border-radius: 50%";
+                changes.style.transition = "border-radius 1s linear, background-color 1s linear, transform 1s linear";
+
+            });
+
+            // third square
+            let box = document.querySelector("#box2");
+            let splitLeft = document.querySelector("#splitLh");
+            let splitRight = document.querySelector("#splitRh");
+            let chick = document.querySelector("#chick");
+
+            // event listenr start
+            box.addEventListener("mouseover", function() {
+                splitLeft.style.animation = "leftHalf 3s linear infinite";
+                splitRight.style.animation = "rightHalf 3s linear infinite";
+                chick.style.animation = "chicken 3s linear 1s infinite";
+
+
+            });
+
+            // event listenr stop
+            box.addEventListener("mouseout", function() {
+                splitLeft.style.animation = "";
+                splitRight.style.animation = "";
+                chick.style.animation = "";
+
+            });
+
+            // target pulse squre
+            let vibe = document.querySelector("#vibe");
+
+            // event listenr start
+            vibe.addEventListener("mouseover", function() {
+                vibe.style.animation = "vibes 2.5s linear infinite";
+            });
+
+            // event listenr stop
+            vibe.addEventListener("mouseout", function() {
+                vibe.style.animation = "";
+            });
+
+            // ham nav
+            function hamNav() {
+                let upMenu = document.querySelector("#mlink");
+                //add or remove attributes
+                upMenu.classList.toggle("open");
+            }
+
+
+
+
+
+        </script>
 
 
 
