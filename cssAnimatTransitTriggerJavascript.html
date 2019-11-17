@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS3 Transitions, Animations, and Trigger with JavaScript</title>
+
+        <style>
+            h2 {
+              text-align: center;
+              padding-top: .5em;
+            }
+
+           h3 {
+              color: #628395;
+              font-size: 1.35em;
+           }
+
+           p {
+             color: #96897b;
+             font-size: 1.2em;
+             text-align: center;
+           }
+
+          .flex {
+             display: flex;
+             flex-flow: row wrap;
+             justify-content: space-around;
+          }
+
+          .container {
+              height: 15em;
+              width: 15em;
+              background-color: #93b7d2;
+              margin-top: .5em ;
+          }
+          .container-one, .container-two {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+
+
+
+
+
+
+        </style>
+
+
+
+
+
+    </head>
+    <body>
+        <h2 id="head">Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</h2>
+        <hr>
+
+        <p>In these two boxes the circle will change color and position while hovering over it.</p>
+        <p>However, the left box triggers an animation while the right one triggers a transition:</p><br>
+
+        <div class="flex">
+            <div id="box1" class="container container-one">
+                <div id="change"></div>
+
+            </div>
+            <div id="box1a" class="container container-one">
+                <div id="changes"></div>
+            </div>
+
+        </div>
+        <br><br>
+        <p>The circle within this box will split in half while hovering over it's container:</p>
+
+        <div class="flex">
+            <div id="box2" class="container container-two">
+                <div id="splitLh" class="half-circle left"></div>
+                <div id="splitRh" class="half-circle right"></div>
+
+            </div>
+
+        </div>
+        <br><br>
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
