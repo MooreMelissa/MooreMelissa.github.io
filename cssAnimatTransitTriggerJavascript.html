@@ -81,12 +81,14 @@
             #box2 {
                 z-index: 2;
                 cursor: pointer;
+
             }
 
             .half-circle {
                 height: 5em;
                 width: 2.5em;
                 background-color: #0c5460;
+
             }
             #chick {
                 display: block;
@@ -230,6 +232,90 @@
             }
         }
 
+            /* Sliding menu style */
+            .menu {
+                position: relative;
+                height: 24em;
+                width: 14em;
+                z-index: 1;
+                top: 0;
+                left: 0;
+            }
+
+            .menuIcon {
+                display: inline-block;
+                padding: .5em .5em;
+                width: 100%;
+                height: 24em;
+                transition: .5s ease-in-out;
+            }
+
+            .markers {
+                cursor: pointer;
+                width: 4em;
+             }
+            .markers:hover div {
+                background-color: blueviolet;
+            }
+
+            .nav {
+                display: block;
+                margin-top: 4em;
+            }
+
+            .mlink {
+                display: none;
+                text-decoration: none;
+                font-size: 1.5em;
+                color: #0c5460;
+                margin: 1em 2em;
+            }
+            .mlink:hover {
+                color: white;
+            }
+
+            .mark1, .mark2, .mark3 {
+                width: 3.5em;
+                height: .4em;
+                background-color: #0c5460;
+                margin-top: .4em;
+                border-radius: .2em;
+                transition: .1s ease-in-out;
+            }
+
+            .open .mark1 {
+                position: absolute;
+                right: 0;
+                transform: rotate(-45deg) translate(-0.45em, 0.55em);
+            }
+
+            .open .mark2 {
+                opacity: 0;
+            }
+
+            .open .mark3 {
+                position: absolute;
+                right: 0;
+                transform: rotate(45deg) translate(0.3em, 0.15em);
+            }
+
+            .open .markers:hover div {
+                background-color: white;
+            }
+
+            .open .menuIcon {
+                height: 24em;
+                width: 14em;
+                background-color: lightblue;
+            }
+
+            .open a {
+                display: block;
+            }
+
+
+
+
 
 
 
@@ -286,17 +372,17 @@
         <p>Click on the hamburger menu</p>
         <div class="flex">
             <div class="container container-four">
-                <div id="menu" class="exNav" onclick="hamNav()">
-                    <div class="navMenu" id="stayPut">
+                <div class="menu" id="menuIcon" onclick="hamNav()">
+                    <div class="menuIcon" id="stayPut">
                         <div class="markers">
                             <div class="mark1"></div>
                             <div class="mark2"></div>
                             <div class="mark3"></div>
                         </div>
                         <div class="nav">
-                            <a class="mlink" href="#">One</a>
-                            <a class="mlink" href="#">Two</a>
-                            <a class="mlink" href="#">Three</a>
+                            <a class="mlink" href="#">Home</a>
+                            <a class="mlink" href="#">Weather</a>
+                            <a class="mlink" href="#">Photos</a>
 
                         </div>
 
@@ -378,9 +464,9 @@
 
             // ham nav
             function hamNav() {
-                let upMenu = document.querySelector("#mlink");
-                //add or remove attributes
-                upMenu.classList.toggle("open");
+                let openMenu = document.querySelector("#menuIcon");
+                //add or remove class attributes (the class name open used by CSS)
+                openMenu.classList.toggle("open");
             }
 
 
