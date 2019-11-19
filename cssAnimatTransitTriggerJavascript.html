@@ -315,6 +315,57 @@
 
 
 
+            #transitionEx {
+                background-color: #93b7d2;
+                overflow: hidden;
+                height: 15em;
+                width: 15em;
+            }
+
+            #aniEx {
+                background-color: darkred;
+                height: 15em;
+                width: 15em;
+            }
+
+            @keyframes aniOne {
+                from {
+                    background-color: black;
+                    height: 15em;
+                    width: 15em;
+                }
+                to {
+                    background-color: darkgoldenrod;
+                    height: 7.5em;
+                    width: 7.5em;
+                }
+            }
+
+            @keyframes aniTwo {
+                0% {
+                    background-color: crimson;
+                    height: 15em;
+                    width: 15em;
+                }
+                33% {
+                    background-color: red;
+                    height: 23em;
+                    width: 23em;
+                }
+                66% {
+                    background-color: darkred;
+                    height: 7.5em;
+                    width: 7.5em;
+                }
+                100% {
+                    background-color: darkgoldenrod;
+                    height: 15em;
+                    width: 15em;
+                }
+            }
+
+
+
 
 
 
@@ -368,6 +419,27 @@
 
         </div>
         <br><br>
+        <p>Transitions</p>
+
+        <p>
+            <button type="button" id="btn" onclick="colorChange('transitionEx', 'crimson');">Crimson</button>
+           <button type="button" id="btn" onclick="colorChange('transitionEx', 'darkgoldenrod');">Dark Yellow</button>
+           <button type="button" id="btn" onclick="moveIn('transitionEx');">Box Collapse</button>
+            <button type="button" id="btn" onclick="moveOut('transitionEx');">Box Open</button>
+        </p>
+        <div class="flex">
+            <div id="transitionEx"></div>
+
+        </div>
+        <p>Animations</p>
+        <p>
+            <button type="button" id="btn" onclick="aniOne('aniEx');">Run Animation</button>
+            <button type="button" id="btn" onclick="aniTwo('aniEx');">Run Animation</button>
+        </p>
+        <div class="flex">
+            <div id="aniEx"></div>
+
+        </div>
 
         <p>Click on the hamburger menu</p>
         <div class="flex">
@@ -468,6 +540,40 @@
                 let openMenu = document.querySelector("#menuIcon");
                 //add or remove class attributes (the class name open used by CSS)
                 openMenu.classList.toggle("open");
+            }
+
+            // transitions functions
+            function colorChange(el, color) {
+                var change = document.getElementById(el);
+                change.style.transition = "background 1s both";
+                change.style.background = color;
+            }
+
+            function moveIn(el) {
+                var change = document.getElementById(el);
+                change.style.backgroundColor = "#93b7d2";
+                change.style.transition = "width 1s ease-out";
+                change.style.width = "0em";
+            }
+
+            function moveOut(el) {
+                var change = document.getElementById(el);
+                change.style.backgroundColor = "#628395";
+                change.style.transition = "width 1s ease-in";
+                change.style.width = "15em";
+            }
+
+            // Animation Functions
+             function aniOne(el) {
+                 var change = document.getElementById(el);
+                 change.style.animation = "aniOne 3s both";
+
+             }
+
+            function aniTwo(el) {
+                let change = document.getElementById(el);
+                change.style.animation ="aniTwo 3s both";
+
             }
 
 
