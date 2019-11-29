@@ -11,15 +11,85 @@
     </head>
 
      <body>
-         <audio src="music/scott-joplin-peacherine-rag.mp3" id="ragtime" loop autoplay="autoplay" hidden volume="0.3" preload="auto"></audio>
+         <audio control loop autoplay src="music/scott-joplin-peacherine-rag.mp3" type="audio/mpeg" id="ragtime" allow="autoplay" ></audio>
+
+         <section class="memory-game">
+             <div class="memory-card" data-name="eighth">
+                 <img class="front-face" src="pictures/eighthnote.jpg" alt="eighth note" id="eigth">
+                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+             </div>
+
+
+             <div class="memory-card" data-name="eighth">
+                 <img class="front-face" src="pictures/eighthnote.jpg" alt="eighth note" id="eigth">
+                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+             </div>
+
+
+             <div class="memory-card" data-name="whole">
+                 <img class="front-face" src="pictures/wholenote.jpg" alt="whole note" id="whole">
+                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+             </div>
+
+             <div class="memory-card" data-name="whole">
+                 <img class="front-face" src="pictures/wholenote.jpg" alt="whole note" id="whole">
+                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+             </div>
+
+             <div class="memory-card" data-name="quarter">
+                 <img class="front-face" src="pictures/quarter_note_bw.jpg" alt="quarter note" id="quarter">
+                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+             </div>
+
+             <div class="memory-card" data-name="quarter">
+                 <img class="front-face" src="pictures/quarter_note_bw.jpg" alt="quarter note" id="quarter">
+                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+             </div>
+
+             <div class="memory-card" data-name="half">
+                 <img class="front-face" src="pictures/halfnote.jpeg" alt="half note" id="half">
+                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+             </div>
+
+             <div class="memory-card" data-name="half">
+                 <img class="front-face" src="pictures/halfnote.jpeg" alt="half note" id="half">
+                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+             </div>
+
+             <div class="memory-card" data-name="treble">
+                 <img class="front-face" src="pictures/treble_clef.jpg" alt="treble clef" id="treble">
+                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+             </div>
+             <div class="memory-card" data-name="treble">
+                 <img class="front-face" src="pictures/treble_clef.jpg" alt="treble clef" id="treble">
+                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+             </div>
+
+             <div class="memory-card" data-name="bass">
+                 <img class="front-face" src="pictures/bass_clef.jpg" alt="bass clef" id="bass">
+                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+             </div>
+
+             <div class="memory-card" data-name="bass">
+                 <img class="front-face" src="pictures/bass_clef.jpg" alt="bass-clef" id="bass">
+                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+             </div>
+
+
+
+         </section>
 
 
 
          <script src="javascript/final.js"></script>
-         <script>
-             let ragtime = document.querySelector('#ragtime');
-             ragtime.play();
-             ragtime.volume = 0.5;
+         <script type="text/javascript">
+             window.onload=function() {
+                 var ragtime = document.getElementById('ragtime');
+                 ragtime.play();
+                 ragtime.volume = 0.1;
+             }
+
+
          </script>
      </body>
 
