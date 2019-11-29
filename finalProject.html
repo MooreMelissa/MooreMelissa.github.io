@@ -11,7 +11,16 @@
     </head>
 
      <body>
+         <audio src="music/scott-joplin-peacherine-rag.mp3" id="ragtime" loop autoplay="autoplay" hidden volume="0.3" preload="auto"></audio>
 
+
+
+         <script src="javascript/final.js"></script>
+         <script>
+             let ragtime = document.querySelector('#ragtime');
+             ragtime.play();
+             ragtime.volume = 0.5;
+         </script>
      </body>
 
 </html>
