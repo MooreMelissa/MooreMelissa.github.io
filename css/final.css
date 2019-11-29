@@ -8,15 +8,13 @@
 body {
     height: 100vh;
     background: antiquewhite;
-    text-align: center;
-    font-size: 1.5em;
+    display:flex;
 }
 
 .memory-game {
     width: 640px;
     height: 640px;
     margin: auto;
-    margin-right: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
