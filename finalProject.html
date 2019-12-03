@@ -13,10 +13,48 @@
      <body>
          <audio control loop autoplay src="music/scott-joplin-peacherine-rag.mp3" type="audio/mpeg" id="ragtime" allow="autoplay" ></audio>
 
+         <br><br><br>
+         <form id="registration-form">
+             <h3>Student Registration Form</h3>
+             <div class="field">
+                <label for="first-name">First Name</label>
+                <input type="text" name="first-name" id="first-name" />
+             </div>
+             <div class="field">
+                <label for="last-name">Last Name</label>
+                <input type="text" name="last-name" id="last-name" />
+             </div>
+             <div class="field">
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age" />
+             </div>
+             <div class="field">
+                 <label for="email">Email</label>
+                 <input type="email" name="email" id="email" />
+             </div>
+             <div class="field">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" maxlength="11"/>
+             </div>
+             <div class="field">
+                <label for="experience">Experience</label>
+                <input type="text" name="experience" id="experience" />
+             </div>
+             <div class="field">
+                <label for="questions">Message</label>
+                <textarea name="message" id="message" placeholder="Message"></textarea>
+             </div>
+             <br><br>
+             <div class="field">
+                <button class="action" type="submit" id="submit" onclick=store()>Submit</button>
+             </div>
+         </form>
+         <br><br><br>
          <h2>Music Term Memory Game</h2>
 
          <hr>
          <br><br>
+
 
          <section class="memory-game">
 
@@ -83,7 +121,14 @@
 
 
 
+
          </section>
+
+
+             <div>
+                 <button id="play-again" onclick="playAgain()">Play again</button>
+             </div>
+
 
 
 

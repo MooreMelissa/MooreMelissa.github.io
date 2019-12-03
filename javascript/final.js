@@ -1,5 +1,6 @@
 
-const cards = document.querySelectorAll('.memory-card');
+const cards = document.querySelectorAll(".memory-card");
+
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -60,3 +61,6 @@ function resetBoard() {
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
+// stuff for form
+// add an event listener for form submission
+document.getElementById('registration')

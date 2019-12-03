@@ -13,6 +13,7 @@ body {
 h2 {
     font-size: 2.5em;
     text-align: center;
+    color: #0c5460;
 }
 section {
     display: flex;
@@ -68,3 +69,57 @@ section {
 
 
 
+/* form */
+form {
+    margin-left: 350px;
+    width: 500px;
+    text-align: center;
+    border: 2px solid #0c5460;
+    border-radius: 4px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 20px;
+
+
+
+}
+.field {
+    width: 30em;
+
+}
+h3 {
+    font-size: 1.2em;
+    color: #0c5460;
+    text-align: center;
+}
+label {
+    display:inline-block;
+    width: 10em;
+    color: #628395;
+    font-size: 1.3em;
+    text-align: left;
+}
+input, textarea {
+    padding: .7em;
+    width: 10em;
+    text-align: center;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 1.1em;
+    margin: .5em 0 0 .5em;
+    color: #0c5460;
+}
+input[type=text]:focus {
+    background-color: lightcyan;
+
+}
+
+.action {
+    background-color: cornflowerblue;
+    border-style: none;
+    padding: .65em 1.3em;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #ffd686;
+    cursor: pointer;
+}
