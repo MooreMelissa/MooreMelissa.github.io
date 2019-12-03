@@ -10,13 +10,18 @@ body {
     background: antiquewhite;
 
 }
+header h1 {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
 
 /* Sliding menu style */
 
 .sidenav {
-    position: relative;
+    position: absolute;
     height: 24em;
-    width: 14em;
+    width: 10em;
     z-index: 1;
     top: 0;
     left: 0;
@@ -80,15 +85,15 @@ body {
 
 }
 .open .nav {
-    background-color: cadetblue;
+    background-color: cornflowerblue;
 }
 .open a {
     display: block;
 }
-h1  {
-    float: right;
-    margin-right: 375px;
-    font-size: 2.5em;
+ h1  {
+
+     margin-top:200px;
+    font-size: 3.5em;
     text-align: center;
     color:  #0c5460;
     background-color: lightblue;
@@ -157,6 +162,7 @@ section {
 form {
 
     margin-left: 350px;
+    margin-top: 10px;
     width: 500px;
     text-align: center;
     border: 2px solid #0c5460;
@@ -202,7 +208,7 @@ input:focus {
 }
 input:hover {
     transition: background-color;
-    background-color: blueviolet;
+    background-color: lavender;
 }
 textarea:focus {
     background-color: lightcyan;
@@ -212,7 +218,8 @@ textarea:focus {
 }
 textarea:hover {
     transition: background-color;
-    background-color: blueviolet;
+    background-color: lavender
+        ;
 }
 .action {
     background-color: cornflowerblue;
