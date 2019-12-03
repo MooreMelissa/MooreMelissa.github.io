@@ -97,11 +97,11 @@ function store() {
     var localAssarr = JSON.parse( localStorage.getItem("assarrValues"));
 
 
-    document.getElementById("output1").innerHTML = localAssarr["first-name"] + ", thank you for your registration.";
-    document.getElementById("output2").innerHTML = "Miss Melissa will be contacting you shortly by the email address of " + localAssarr["email"];
+    document.getElementById("output1").value = localAssarr["firstname"] + ", thank you for your registration.";
+    document.getElementById("output2").value = "Miss Melissa will be contacting you shortly by the email address of " + localAssarr["email"];
 
 
-    refresh();
+   // refresh();
 
 
 
