@@ -11,9 +11,28 @@
     </head>
 
      <body>
-         <audio control loop autoplay src="music/scott-joplin-peacherine-rag.mp3" type="audio/mpeg" id="ragtime" allow="autoplay" ></audio>
 
-         <br><br><br>
+         <header>
+             <h1>Miss Melissa's Piano Studio</h1>
+
+             <nav>
+                 <div class="container">
+                     <div class="sidenav" id="menu-icon" onclick="toggleNav()">
+                         <div class="bars">
+                             <div class="bar1"></div>
+                             <div class="bar2"></div>
+                             <div class="bar3"></div>
+                         </div>
+                         <div class="nav">
+                             <a class="menu-link" href="finalProject.html">Home</a>
+                             <a class="menu-link" href="memoryGame.html">Matching Game</a>
+                             <a class="menu-link" href="#"> Gallery of Performers</a>
+                         </div>
+                     </div>
+                 </div>
+             </nav>
+
+         </header>
          <form id="registration-form">
              <h3>Student Registration Form</h3>
              <div class="field">
@@ -49,99 +68,22 @@
                 <button class="action" type="submit" id="submit" onclick=store()>Submit</button>
              </div>
          </form>
+
+         <div class=output>
+             <p class="output1"></p>
+             <p class="output2"></p>
+         </div>
          <br><br><br>
-         <h2>Music Term Memory Game</h2>
-
-         <hr>
-         <br><br>
 
 
-         <section class="memory-game">
-
-             <div class="memory-card" data-name="eighth">
-                 <img class="front-face" src="pictures/eighthnote.jpg" alt="eighth note" id="eigth">
-                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
+         <footer>
+             <div class="foot-info">
+                <p>Copyright &copy; 2019 by Melissa Moore</p>
              </div>
-
-
-             <div class="memory-card" data-name="eighth">
-                 <img class="front-face" src="pictures/eighthnote.jpg" alt="eighth note" id="eigth">
-                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
-             </div>
-
-
-             <div class="memory-card" data-name="whole">
-                 <img class="front-face" src="pictures/wholenote.jpg" alt="whole note" id="whole">
-                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
-             </div>
-
-             <div class="memory-card" data-name="whole">
-                 <img class="front-face" src="pictures/wholenote.jpg" alt="whole note" id="whole">
-                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
-             </div>
-
-             <div class="memory-card" data-name="quarter">
-                 <img class="front-face" src="pictures/quarter_note_bw.jpg" alt="quarter note" id="quarter">
-                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
-             </div>
-
-             <div class="memory-card" data-name="quarter">
-                 <img class="front-face" src="pictures/quarter_note_bw.jpg" alt="quarter note" id="quarter">
-                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
-             </div>
-
-             <div class="memory-card" data-name="half">
-                 <img class="front-face" src="pictures/halfnote.jpeg" alt="half note" id="half">
-                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
-             </div>
-
-             <div class="memory-card" data-name="half">
-                 <img class="front-face" src="pictures/halfnote.jpeg" alt="half note" id="half">
-                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
-             </div>
-
-             <div class="memory-card" data-name="treble">
-                 <img class="front-face" src="pictures/treble_clef.jpg" alt="treble clef" id="treble">
-                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
-             </div>
-             <div class="memory-card" data-name="treble">
-                 <img class="front-face" src="pictures/treble_clef.jpg" alt="treble clef" id="treble">
-                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
-             </div>
-
-             <div class="memory-card" data-name="bass">
-                 <img class="front-face" src="pictures/bass_clef.jpg" alt="bass clef" id="bass">
-                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
-             </div>
-
-             <div class="memory-card" data-name="bass">
-                 <img class="front-face" src="pictures/bass_clef.jpg" alt="bass-clef" id="bass">
-                 <img class="back-face" src="pictures/piano.jpeg" alt="Memory Card">
-             </div>
-
-
-
-
-         </section>
-
-
-             <div>
-                 <button id="play-again" onclick="playAgain()">Play again</button>
-             </div>
-
-
-
+         </footer>
 
          <script src="javascript/final.js"></script>
-         <script type="text/javascript">
-             window.onload=function() {
-                 var ragtime = document.getElementById('ragtime');
-                 ragtime.play();
-                 ragtime.volume = 0.1;
-             }
 
-
-         </script>
      </body>
 
 </html>

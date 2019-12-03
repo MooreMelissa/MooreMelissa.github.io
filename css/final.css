@@ -10,7 +10,91 @@ body {
     background: antiquewhite;
 
 }
-h2 {
+
+/* Sliding menu style */
+
+.sidenav {
+    position: relative;
+    height: 24em;
+    width: 14em;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+.menu-icon {
+    display: inline-block;
+    padding: .5em .5em;
+    width: 100%;
+    height: 24em;
+    transition: .5s ease-in-out;
+}
+.bars {
+    cursor: pointer;
+    width: 4em;
+}
+.bars:hover div {
+    background-color: lightblue;
+}
+.nav {
+    display: block;
+    margin-top: 4em;
+
+}
+.menu-link {
+    display: none;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #0c5460;
+    margin: 1em 1em;
+}
+.menu-link:hover {
+    color: white;
+}
+.bar1, .bar2, .bar3 {
+    width: 3.5em;
+    height: .4em;
+    background-color: #0c5460;
+    margin-top: .4em;
+    border-radius: .2em;
+    transition: .1s ease-in-out;
+}
+.open .bar1 {
+    position: absolute;
+    right: 0;
+    transform: rotate(-45deg) translate(-0.45em, 0.55em);
+}
+.open .bar2 {
+    opacity: 0;
+}
+.open .bar3 {
+    position: absolute;
+    right: 0;
+    transform: rotate(45deg) translate(0.3em, 0.15em);
+}
+.open .bars:hover div {
+    background-color: white;
+}
+.open .menu-icon {
+    height: 24em;
+    width: 14em;
+
+}
+.open .nav {
+    background-color: cadetblue;
+}
+.open a {
+    display: block;
+}
+h1  {
+    float: right;
+    margin-right: 375px;
+    font-size: 2.5em;
+    text-align: center;
+    color:  #0c5460;
+    background-color: lightblue;
+}
+ h2 {
+
     font-size: 2.5em;
     text-align: center;
     color: #0c5460;
@@ -71,12 +155,13 @@ section {
 
 /* form */
 form {
+
     margin-left: 350px;
     width: 500px;
     text-align: center;
     border: 2px solid #0c5460;
     border-radius: 4px;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-bottom: 30px;
     padding-right: 20px;
 
@@ -109,30 +194,25 @@ input, textarea {
     margin: .5em 0 0 .5em;
     color: #0c5460;
 }
-input[type=text]:focus {
+input:focus {
     background-color: lightcyan;
+    transition: width 2s;
     width: 12em;
 
 }
-input[type=email]:focus {
-    background-color: lightcyan;
-    width: 12em;
-
-}
-input[type=tel]:focus {
-    background-color: lightcyan;
-    width: 12em;
-
-}
-input[type=number]:focus {
-    background-color: lightcyan;
-    width: 12em;
-
+input:hover {
+    transition: background-color;
+    background-color: blueviolet;
 }
 textarea:focus {
     background-color: lightcyan;
+    transition: width 2s;
     width: 12em;
 
+}
+textarea:hover {
+    transition: background-color;
+    background-color: blueviolet;
 }
 .action {
     background-color: cornflowerblue;
@@ -142,4 +222,24 @@ textarea:focus {
     font-size: 1em;
     color: #ffd686;
     cursor: pointer;
+}
+.action:hover{
+    transition: background-color 2s ease-out;
+    background-color: blue;
+    transition: width 2s;
+    width: 12em;
+
+}
+footer {
+    width: 100%
+    margin-top: 50px;
+}
+.foot-info {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: lightblue;
+    text-align: center;
+    color: white;
+    font-size: .7em;
+    padding: 10px;
 }
