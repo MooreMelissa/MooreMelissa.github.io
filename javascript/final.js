@@ -71,7 +71,7 @@ function toggleNav() {
 
 // stuff for form
 // add an event listener for form submission
-document.getElementById('registration')
+
 
 // collect the user inputs, store them locally
 function store() {
@@ -93,12 +93,8 @@ function store() {
 
     console.log (localStorage.getItem("assarrValues"));
 
-    // parse the JSON string into javascript associative array
-    var localAssarr = JSON.parse( localStorage.getItem("assarrValues"));
 
 
-    document.getElementById("output1").value = localAssarr["firstname"] + ", thank you for your registration.";
-    document.getElementById("output2").value = "Miss Melissa will be contacting you shortly by the email address of " + localAssarr["email"];
 
 
    // refresh();
@@ -106,6 +102,19 @@ function store() {
 
 
 
+}
+
+// retrieve items stored in local storage
+function message() {
+    // parse the JSON string into javascript associative array
+    var localAssarr = JSON.parse( localStorage.getItem("assarrValues"));
+
+    document.getElementById("output1").value =  localAssarr["firstname"];
+    document.getElementById("output2").value =  localAssarr["email"];
+}
+
+function refresh() {
+    history.go(0);
 }
 
 
