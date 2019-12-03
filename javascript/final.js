@@ -109,8 +109,10 @@ function message() {
     // parse the JSON string into javascript associative array
     var localAssarr = JSON.parse( localStorage.getItem("assarrValues"));
 
-    document.getElementById("output1").value =  localAssarr["firstname"];
-    document.getElementById("output2").value =  localAssarr["email"];
+     console.log (localAssarr);
+    document.getElementsByClassName("output1").value =  localAssarr["firstname"];
+    document.getElementsByClassName("output2").value =  localAssarr["email"];
+    document.getElementsByClassName("output3").value = localAssarr["phone"];
 }
 
 function refresh() {
