@@ -97,7 +97,7 @@ function store() {
 
 
 
-   // refresh();
+    refresh();
 
 
 
@@ -108,11 +108,14 @@ function store() {
 function message() {
     // parse the JSON string into javascript associative array
     var localAssarr = JSON.parse( localStorage.getItem("assarrValues"));
-
-     console.log (localAssarr);
-    document.getElementsByClassName("output1").value =  localAssarr["firstname"];
-    document.getElementsByClassName("output2").value =  localAssarr["email"];
-    document.getElementsByClassName("output3").value = localAssarr["phone"];
+    var fname = localAssarr["firstname"];
+    var email = localAssarr["email"];
+    var phone = localAssarr["phone"];
+    document.querySelector(".output1").innerHTML = "Thank you, " + fname + " for your registration. Miss Melissa will be contacting you by email: " + email + " or by phone " + phone;
+    //document.querySelector(".output1").value =  localAssarr["firstname"];
+   // document.querySelector(".output2").value =  localAssarr["email"];
+   // document.querySelector(".output3").value =  localAssarr["phone"];
+      console.log (localAssarr);
 }
 
 function refresh() {
