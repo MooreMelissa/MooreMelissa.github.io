@@ -111,9 +111,29 @@ input, textarea {
 }
 input[type=text]:focus {
     background-color: lightcyan;
+    width: 12em;
 
 }
+input[type=email]:focus {
+    background-color: lightcyan;
+    width: 12em;
 
+}
+input[type=tel]:focus {
+    background-color: lightcyan;
+    width: 12em;
+
+}
+input[type=number]:focus {
+    background-color: lightcyan;
+    width: 12em;
+
+}
+textarea:focus {
+    background-color: lightcyan;
+    width: 12em;
+
+}
 .action {
     background-color: cornflowerblue;
     border-style: none;
