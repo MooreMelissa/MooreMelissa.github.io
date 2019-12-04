@@ -95,28 +95,32 @@ function store() {
 
 
 
-
-
     refresh();
 
 
-
-
 }
+
+
+     //parse the JSON string into javascript associative array
+   var localAssarrs = JSON.parse( localStorage.getItem("assarrValues"));
+    var fname = localAssarrs["firstname"];
+    var email = localAssarrs["email"];
+    var phone = localAssarrs["phone"];
+
+    document.querySelector(".output1").innerHTML = "Thank you, " + fname + " for your registration. Miss Melissa will be contacting you by email: " + email + " or by phone " + phone ;
+
+
 
 // retrieve items stored in local storage
-function message() {
-    // parse the JSON string into javascript associative array
-    var localAssarr = JSON.parse( localStorage.getItem("assarrValues"));
-    var fname = localAssarr["firstname"];
-    var email = localAssarr["email"];
-    var phone = localAssarr["phone"];
-    document.querySelector(".output1").innerHTML = "Thank you, " + fname + " for your registration. Miss Melissa will be contacting you by email: " + email + " or by phone " + phone;
-    //document.querySelector(".output1").value =  localAssarr["firstname"];
-   // document.querySelector(".output2").value =  localAssarr["email"];
-   // document.querySelector(".output3").value =  localAssarr["phone"];
-      console.log (localAssarr);
-}
+//function message() {
+//     parse the JSON string into javascript associative array
+//   var localAssarr = JSON.parse( localStorage.getItem("assarrValues"));
+//    var fname = localAssarr["firstname"];
+//    var email = localAssarr["email"];
+//    var phone = localAssarr["phone"];
+ //   document.querySelector(".output1").innerHTML = "Thank you, " + fname + " for your registration. Miss Melissa will be contacting you by email: " + email + " or by phone " + phone ;
+
+//}
 
 function refresh() {
     history.go(0);
