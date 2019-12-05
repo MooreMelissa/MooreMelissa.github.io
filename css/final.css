@@ -166,6 +166,18 @@ header h1 {
     text-align: center;
     color: #0c5460;
 }
+#grab {
+    font-size: 2.0em;
+    text-align: center;
+    color: darkblue;
+}
+#bio {
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 1.5em;
+    text-align: center;
+    color: #0c5460;
+}
 #output, #replay {
     font-size: 1.5em;
     text-align: center;
@@ -304,12 +316,15 @@ textarea:hover {
     color: #ffd686;
     cursor: pointer;
 }
-.action:hover{
+.action:hover, .play:hover, .flush:hover {
     transition: background-color 2s ease-out;
     background-color: blue;
     transition: width 2s;
     width: 12em;
 
+}
+#confirm {
+    font-size: 1.5em;
 }
 
 .flush {
