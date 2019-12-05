@@ -136,7 +136,9 @@ function emptyLS() {
    refresh();
 }
 
-
+function playAgain() {
+    refresh();
+}
 
 function refresh() {
     history.go(0);

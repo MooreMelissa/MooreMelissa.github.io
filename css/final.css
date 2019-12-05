@@ -166,11 +166,16 @@ header h1 {
     text-align: center;
     color: #0c5460;
 }
-#output {
+#output, #replay {
     font-size: 1.5em;
     text-align: center;
     color: darkblue;
 
+}
+#refresh {
+    font-size: 1.5em;
+    text-align: center;
+    color: #0c5460;
 }
 section {
     display: flex;
@@ -290,7 +295,7 @@ textarea:hover {
     background-color: lavender
         ;
 }
-.action {
+.action, .play {
     background-color: darkblue;
     border-style: none;
     padding: .65em 1.3em;
@@ -305,6 +310,16 @@ textarea:hover {
     transition: width 2s;
     width: 12em;
 
+}
+
+.flush {
+    background-color: darkblue;
+    border-style: none;
+    padding: .65em 1.3em;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #ffd686;
+    cursor: pointer;
 }
 footer {
     width: 100%
