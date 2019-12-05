@@ -1,4 +1,5 @@
 
+
 const cards = document.querySelectorAll(".memory-card");
 
 
@@ -107,7 +108,8 @@ function store() {
     var email = localAssarrs["email"];
     var phone = localAssarrs["phone"];
 
-    document.querySelector(".output1").innerHTML = "Thank you, " + fname + " for your registration. Miss Melissa will be contacting you by email: " + email + " or by phone " + phone ;
+    document.querySelector("#confirm").innerHTML = "Thank you, " + fname + " for your registration. Miss Melissa will be contacting you by email: " + email + " or by phone " + phone ;
+
 
 
 

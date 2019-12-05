@@ -8,6 +8,24 @@
 body {
     height: 100vh;
     background: antiquewhite;
+    animation: pulse 8s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: antiquewhite;
+
+    }
+    33% {
+        background-color: bisque;
+
+    }
+    66% {
+        background-color: darksalmon;
+    }
+    100% {
+        background-color: bisque;
+    }
 
 }
 header h1 {
@@ -15,6 +33,50 @@ header h1 {
     margin: 0 auto;
     margin-bottom: 60px;
 }
+.logo {
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 50%;
+    animation: vibes 2.5s infinite linear;
+    transform: rotateY(10deg);
+}
+/* logo animation */
+@keyframes vibes {
+     0% {
+         transform: rotateY(0deg) scale(1);
+
+     }
+     45% {
+         transform: scale(1);
+
+     }
+
+    46% {
+         background-color: red;
+         transform: scale(2.35);
+     }
+    47% {
+         transform: scale(1);
+    }
+    59% {
+
+         transform: scale(1);
+     }
+    60% {
+         background-color: yellow;
+         transform: scale(2.05);
+     }
+    61% {
+         transform: scale(1);
+
+    }
+    100% {
+          background-color: orange;
+          transform: rotateY(360deg) scale(1);
+
+    }
+}
+
 
 /* Sliding menu style */
 
@@ -23,8 +85,8 @@ header h1 {
     height: 24em;
     width: 10em;
     z-index: 1;
-    top: 0;
-    left: 0;
+    top: 5px;
+    left: 30px;
 }
 .menu-icon {
     display: inline-block;
