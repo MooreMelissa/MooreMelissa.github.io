@@ -127,7 +127,7 @@ function store() {
     var email = localAssarrs["email"];
     var phone = localAssarrs["phone"];
 
-    document.querySelector("#confirm").innerHTML = "Thank you, " + fname + " for your registration.<br> Miss Melissa will be contacting you by email " + email + " or by phone " + phone ;
+    document.querySelector("#confirm").innerHTML = "Thank you, " + fname + " for your registration.<br> Melissa will be contacting you personally by email " + email + " or by phone " + phone ;
 
 // empty local storage and refresh page
 function emptyLS() {
