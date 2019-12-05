@@ -8,6 +8,9 @@
 body {
     height: 100vh;
     background: antiquewhite;
+
+}
+.movement {
     animation: pulse 8s infinite;
 }
 
@@ -86,7 +89,7 @@ header h1 {
     width: 10em;
     z-index: 1;
     top: 5px;
-    left: 30px;
+    left: 20px;
 }
 .menu-icon {
     display: inline-block;
@@ -323,6 +326,10 @@ textarea:hover {
     width: 12em;
 
 }
+.play {
+    animation: jump 3s infinite;
+}
+
 #confirm {
     font-size: 1.5em;
 }
