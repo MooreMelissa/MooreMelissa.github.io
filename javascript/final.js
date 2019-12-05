@@ -1,4 +1,23 @@
 
+var data = null;
+
+var request = new XMLHttpRequest();
+
+// defining event listener for ready state change event
+request.onreadystatechange = function() {
+
+    if(this.readyState === 4 && this.status === 200) {
+		  console.log(this.responseText);
+          var joke = JSON.parse(this.responseText);
+
+          document.getElementById("joke").innerHTML = joke;
+     }
+ };
+
+
+request.open("GET", "https://geek-jokes.sameerkumar.website/api");
+request.setRequestHeader("accept", "application/json");
+request.send(data);
 
 const cards = document.querySelectorAll(".memory-card");
 
@@ -103,26 +122,21 @@ function store() {
 
 
      //parse the JSON string into javascript associative array
-   var localAssarrs = JSON.parse( localStorage.getItem("assarrValues"));
+    var localAssarrs = JSON.parse( localStorage.getItem("assarrValues"));
     var fname = localAssarrs["firstname"];
     var email = localAssarrs["email"];
     var phone = localAssarrs["phone"];
 
-    document.querySelector("#confirm").innerHTML = "Thank you, " + fname + " for your registration. Miss Melissa will be contacting you by email: " + email + " or by phone " + phone ;
+    document.querySelector("#confirm").innerHTML = "Thank you, " + fname + " for your registration.<br> Miss Melissa will be contacting you by email " + email + " or by phone " + phone ;
+
+// empty local storage and refresh page
+function emptyLS() {
+    localStorage.removeItem("assarrValues");
+
+   refresh();
+}
 
 
-
-
-// retrieve items stored in local storage
-//function message() {
-//     parse the JSON string into javascript associative array
-//   var localAssarr = JSON.parse( localStorage.getItem("assarrValues"));
-//    var fname = localAssarr["firstname"];
-//    var email = localAssarr["email"];
-//    var phone = localAssarr["phone"];
- //   document.querySelector(".output1").innerHTML = "Thank you, " + fname + " for your registration. Miss Melissa will be contacting you by email: " + email + " or by phone " + phone ;
-
-//}
 
 function refresh() {
     history.go(0);

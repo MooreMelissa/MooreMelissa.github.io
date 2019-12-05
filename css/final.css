@@ -29,7 +29,7 @@ body {
 
 }
 header h1 {
-    max-width: 800px;
+    max-width: 820px;
     margin: 0 auto;
     margin-bottom: 60px;
 }
@@ -169,7 +169,7 @@ header h1 {
 #output {
     font-size: 1.5em;
     text-align: center;
-    color: cornflowerblue;
+    color: darkblue;
 
 }
 section {
@@ -233,6 +233,7 @@ form {
     margin-top: 10px;
     width: 500px;
     text-align: center;
+    background-color: antiquewhite;
     border: 2px solid #0c5460;
     border-radius: 4px;
     padding-top: 10px;
@@ -290,7 +291,7 @@ textarea:hover {
         ;
 }
 .action {
-    background-color: cornflowerblue;
+    background-color: darkblue;
     border-style: none;
     padding: .65em 1.3em;
     border-radius: 5px;
@@ -310,11 +311,15 @@ footer {
     margin-top: 50px;
 }
 .foot-info {
-    max-width: 800px;
+    max-width: 820px;
     margin: 0 auto;
     background-color: lightblue;
     text-align: center;
     color: #0c5460;
-    font-size: .7em;
+    font-size: 1em;
     padding: 10px;
+}
+#joke {
+    font-size: 1em;
+    color: darkblue;
 }
