@@ -61,9 +61,11 @@ header h1 {
     47% {
          transform: scale(1);
     }
+
     59% {
 
          transform: scale(1);
+
      }
     60% {
          background-color: yellow;
@@ -73,6 +75,7 @@ header h1 {
          transform: scale(1);
 
     }
+
     100% {
           background-color: orange;
           transform: scale(1);
