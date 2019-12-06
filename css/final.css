@@ -327,7 +327,24 @@ textarea:hover {
 
 }
 .play {
-    animation: jump 3s infinite;
+    animation: jump 3s linear infinite;
+}
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+    75% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 #confirm {
