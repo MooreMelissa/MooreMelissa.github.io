@@ -387,7 +387,8 @@ footer {
     width: 100px;
     display: block;
     transform: translate(-70%, 0%);
-    animation: hearts 15s infinite 3s;
+    animation: hearts 15s infinite ease-in-out;
+    transition-delay: 5s;
 
 }
 #hrrt {
@@ -395,8 +396,8 @@ footer {
     width: 100px;
     display: block;
     transform: translate(1175%, 0%);
-    animation: hearts 15s infinite reverse 3s;
-
+    animation: hearts 15s infinite reverse ease-in-out;
+    transition-delay: 5s;
 }
 @keyframes hearts {
     0% {
@@ -404,7 +405,11 @@ footer {
        opacity: 0;
     }
     3% {
-        transform: translate(75%, 0%);
+        transform: translate(65%, -20%);
+        opacity: 0.15;
+    }
+    5% {
+        transform: translate(120%, 0%);
         opacity: 0.25;
     }
     10% {
