@@ -375,7 +375,7 @@ footer {
     width: 100px;
     display: block;
     transform: translate(1175%, 0%);
-    /*animation: hearts 15s infinite reverse 3s; */
+    animation: hearts 15s infinite reverse 3s;
 
 }
 @keyframes hearts {
