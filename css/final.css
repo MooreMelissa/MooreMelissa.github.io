@@ -386,18 +386,20 @@ footer {
     position: relative;
     width: 100px;
     display: block;
-    transform: translate(-70%, 0%);
-    animation: hearts 15s infinite ease-in-out;
-    transition-delay: 5s;
+    transform: translate(-90%, 0%);
+    opacity: 0;
+    animation: hearts 15s infinite ease-in 5s;
+
+
 
 }
 #hrrt {
     position: relative;
     width: 100px;
     display: block;
-    transform: translate(1175%, 0%);
-    animation: hearts 15s infinite reverse ease-in-out;
-    transition-delay: 5s;
+    transform: translate(1190%, 0%);
+    animation: hearts 15s infinite reverse ease-in-out 4s;;
+
 }
 @keyframes hearts {
     0% {
@@ -445,7 +447,7 @@ footer {
     }
     95% {
         transform: translate(1077%, 0%);
-        opacity: 0.50;
+        opacity: 0.35;
     }
     99% {
         transform: translate(1100%, -40%);
@@ -454,6 +456,7 @@ footer {
     100% {
          transform: translateX(1175%, 0%);
          opacity: 0;
+         transition-delay: 3s;
     }
 }
 div.flexy {
