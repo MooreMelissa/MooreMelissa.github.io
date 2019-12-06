@@ -383,7 +383,6 @@ div.picture {
  }
 div.pic1 {
     float:left;
-
     transform: rotate(7deg);
 
 }
@@ -392,21 +391,23 @@ div.pic2 {
     transform: rotate(-8deg);
 
 }
-            div.pic3 {
-
-
-                transform: rotate(7deg);
-            }
-            div.pic4 {
-
-
-                transform: rotate(-8deg);
-            }
-            div.pic5 {
-
-
-                transform: rotate(10deg);
-            }
-
+div.pic3 {
+    transform: rotate(7deg);
+}
+div.pic4 {
+    transform: rotate(-8deg);
+}
+div.pic5 {
+    transform: rotate(10deg);
+}
+div.pic6 {
+    transform: rotate(-10deg);
+}
+div.pic7 {
+    transform: rotate(8deg);
+}
+div.pic8 {
+    transform: rotate(15deg);
+}
 
 
