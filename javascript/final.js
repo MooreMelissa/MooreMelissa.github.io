@@ -134,7 +134,8 @@ function store() {
 function emptyLS() {
     localStorage.removeItem("assarrValues");
 
-   refresh();
+
+    refresh();
 }
 
 function playAgain() {
