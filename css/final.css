@@ -243,7 +243,8 @@ section {
 
 }
 
-.front-face {
+.front-face
+ {
     transform: rotateY(180deg);
 }
 
