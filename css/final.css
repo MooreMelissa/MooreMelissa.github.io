@@ -270,6 +270,13 @@ form {
     width: 30em;
 
 }
+#need {
+    color: red;
+    size: 5px;
+}
+#require {
+    color: #628395;
+}
 h3 {
     font-size: 1.2em;
     color: #0c5460;

@@ -46,28 +46,28 @@
          <form id="registration-form">
              <h3>Student Registration Form</h3>
              <div class="field">
-                <label for="first-name">First Name</label>
-                <input type="text" name="first-name" id="first-name" />
+                <label for="first-name">First Name <span id="need">*</span></label>
+                 <input type="text" name="first-name" id="first-name" required>
              </div>
              <div class="field">
                 <label for="last-name">Last Name</label>
-                <input type="text" name="last-name" id="last-name" />
+                <input type="text" name="last-name" id="last-name">
              </div>
              <div class="field">
                 <label for="age">Age</label>
-                <input type="number" name="age" id="age" />
+                <input type="number" name="age" id="age">
              </div>
              <div class="field">
-                 <label for="email">Email</label>
-                 <input type="email" name="email" id="email" />
+                 <label for="email">Email <span id="need">*</span></label>
+                 <input type="email" name="email" id="email" required>
              </div>
              <div class="field">
-                <label for="phone">Phone Number</label>
-                <input type="tel" name="phone" id="phone" maxlength="11"/>
+                <label for="phone">Phone Number <span id="need">*</span></label>
+                <input type="tel" name="phone" id="phone" maxlength="11" required>
              </div>
              <div class="field">
                 <label for="experience">Experience</label>
-                <input type="text" name="experience" id="experience" />
+                <input type="text" name="experience" id="experience">
              </div>
              <div class="field">
                 <label for="questions">Message</label>
@@ -77,6 +77,8 @@
              <div class="field">
                 <button class="action" type="button" id="submit" onclick=store()>Submit</button>
              </div>
+             <br><br>
+             <p id="require"> <span id="need">*</span> input is required </p>
          </form>
 
          <br><br><br>
