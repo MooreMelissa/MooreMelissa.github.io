@@ -9,7 +9,7 @@ request.onreadystatechange = function() {
     if(this.readyState === 4 && this.status === 200) {
 		  console.log(this.responseText);
           var joke = JSON.parse(this.responseText);
-
+          document.getElementById("joke").style.cssText = "font-style:italic;font-size:1.2em;"
           document.getElementById("joke").innerHTML = joke;
      }
  };
@@ -127,7 +127,7 @@ function store() {
     var email = localAssarrs["email"];
     var phone = localAssarrs["phone"];
 
-    document.querySelector("#confirm").style.cssText = "color: red;"
+    document.querySelector("#confirm").style.cssText =  "color: red";
     document.querySelector("#confirm").innerHTML = "Thank you, " + fname + " for your registration.<br> Melissa will be contacting you personally by email " + email + " or by phone " + phone ;
 
 // empty local storage and refresh page
