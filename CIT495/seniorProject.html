@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Senior Project</title>
+        <link rel="stylesheet" type="text/css" href="CIT495/senior.css">
+
+
+
+
+    </head>
+
+     <body>
+
+
+         <header>
+             <div id="title">
+
+                 <h1>Jessie's Piano Studio<object class="logo" data="pictures/pulsingNote.png" width="70em"></object></h1>
+
+             </div>
+             <nav>
+                 <div class="container">
+                     <div class="sidenav" id="menu-icon" onclick="toggleNav()">
+                         <div class="bars">
+                             <div class="bar1"></div>
+                             <div class="bar2"></div>
+                             <div class="bar3"></div>
+                         </div>
+                         <div class="nav">
+                             <a class="menu-link" href="finalProject.html">Home</a>
+                             <a class="menu-link" href="memoryGame.html">Matching Game</a>
+                             <a class="menu-link" href="gallery.html"> Gallery of Performers</a>
+                         </div>
+                     </div>
+                 </div>
+             </nav>
+
+         </header>
+          <h3 id="grab">It's Never to Late to Discover the Power of Music<br> Sign up today!</h3><br><br>
+         <hr><br><br>
+         <p id="bio">Everyone has the potential to develop an outlet in music, and playing piano can help establish this foundation of love for music. Melissa has been a piano instructor for over 30 years. She offers private lessons to ensure each student learns in the manner that is best suited for them.
+         <br>It's truly one of the best, lifelong gifts a parent can give to their child. Melissa recommends beginning piano lessons at about the age of 5. Students are able to choose from a wide variety of music styles. Piano recitals are optional, low-pressure, and offered throughout the year for all students. Whatever your age, it will be an unforgettable experience.</p><br><br>
+
+         <hr><br><br>
+         <form id="registration-form">
+             <h3>Student Registration Form</h3>
+             <div class="field">
+                <label for="first-name">First Name <span id="need">*</span></label>
+                 <input type="text" name="first-name" id="first-name" required>
+             </div>
+             <div class="field">
+                <label for="last-name">Last Name</label>
+                <input type="text" name="last-name" id="last-name">
+             </div>
+             <div class="field">
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age">
+             </div>
+             <div class="field">
+                 <label for="email">Email <span id="need">*</span></label>
+                 <input type="email" name="email" id="email" required>
+             </div>
+             <div class="field">
+                <label for="phone">Phone Number <span id="need">*</span></label>
+                <input type="tel" name="phone" id="phone" maxlength="11" required>
+             </div>
+             <div class="field">
+                <label for="experience">Experience</label>
+                <input type="text" name="experience" id="experience">
+             </div>
+             <div class="field">
+                <label for="questions">Message</label>
+                <textarea type="text" name="message" id="message" placeholder="Message"></textarea>
+             </div>
+             <br><br>
+             <div class="field">
+                <button class="action" type="button" id="submit" onclick=store()>Submit</button>
+             </div>
+             <br><br>
+             <p id="require"> <span id="need">*</span> input is required </p>
+         </form>
+
+         <br><br><br>
+         <hr><br><br>
+         <div id= "output" class="output" >
+             <p class="output1" ><span id="confirm">Melissa will contact you by email or phone</span></p>
+
+         </div><br><br>
+         <hr>
+         <br><br><br>
+         <div id="refresh">
+
+             <p> Please click refresh button.<br>Leave no personal information on display</p><br>
+             <button class="flush" type="button" onclick="emptyLS()">Refresh Page</button><br><br><br>
+
+         </div>
+
+
+         <footer>
+             <div class="foot-info">
+                 <div id="smile">
+                     <p>Help Someone Smile Today.</p>
+
+                     <p>Share a Joke: <span id="joke" ></span></p>
+                 </div>
+                <p>Copyright &copy; 2019 by Melissa Moore</p>
+             </div>
+         </footer>
+
+         <script src="javascript/final.js"></script>
+
+
+
+     </body>
+
+</html>
