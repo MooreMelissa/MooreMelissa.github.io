@@ -3,49 +3,44 @@
     <head>
         <meta charset="utf-8">
         <title>Senior Project</title>
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-        <!-- Latest compiled JavaScript -->
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+        <!-- Custome styles -->
         <link rel="stylesheet" type="text/css" href="CIT495/senior.css">
-
-
 
 
     </head>
 
      <body>
 
-
          <header>
-             <div id="title">
-
-                 <h1>Jessie's Piano Studio<object class="logo" data="pictures/pulsingNote.png" width="70em"></object></h1>
-
-             </div>
-             <nav>
-                 <div class="container">
-                     <div class="sidenav" id="menu-icon" onclick="toggleNav()">
-                         <div class="bars">
-                             <div class="bar1"></div>
-                             <div class="bar2"></div>
-                             <div class="bar3"></div>
+             <div class="container">
+                 <nav class="navbar navbar-inverse">
+                     <div class="container">
+                         <div class="navbar-header">
+                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                                 <span class="sr-only">Toggle navigation</span>
+                                 <span class="icon-bar"></span>
+                                 <span class="icon-bar"></span>
+                                 <span class="icon-bar"></span>
+                             </button>
+                             <a href="#" class="navbar-brand">Jessie'sPianoStudio<object class="logo" data="pictures/pulsingNote.png" width="70em"></object></a>
                          </div>
-                         <div class="nav">
-                             <a class="menu-link" href="finalProject.html">Home</a>
-                             <a class="menu-link" href="memoryGame.html">Matching Game</a>
-                             <a class="menu-link" href="gallery.html"> Gallery of Performers</a>
+                         <div id="main-menu" class="collapse navbar-collapse">
+                             <ul class="nav navbar-nav">
+                                 <li class="active"><a href="#">Home</a></li>
+                                 <li><a href="#">Game</a></li>
+                                 <li><a href="#">Gallery</a></li>
+                                 <li><a href="#"></a>Sign Up</li>
+                             </ul>
                          </div>
                      </div>
-                 </div>
-             </nav>
+                 </nav>
+             </div><!-- /.container" -->
 
          </header>
           <h3 id="grab">It's Never to Late to Discover the Power of Music<br> Sign up today!</h3><br><br>
@@ -119,6 +114,14 @@
              </div>
          </footer>
 
+
+         <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+         <!-- for memory game -->
          <script src="javascript/final.js"></script>
 
 
