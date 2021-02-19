@@ -63,3 +63,9 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 function playAgain() {
     refresh();
 }
+
+function refresh() {
+    history.go(0);
+}
+
+
