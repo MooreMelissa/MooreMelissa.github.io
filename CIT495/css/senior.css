@@ -28,6 +28,12 @@ h6 {
 
 }
 
+hr {
+ background-color: #FFA101;
+    height: 2px;
+    border: none;
+}
+
 header.masthead {
     margin-bottom: 50px;
     background: no repeat center center;
