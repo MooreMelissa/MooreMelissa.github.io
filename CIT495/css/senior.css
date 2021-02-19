@@ -37,6 +37,7 @@ header.masthead {
     background-size: cover;
 }
 
+
 header.masthead .overlay {
   position: absolute;
   top: 0;
@@ -69,8 +70,10 @@ header.masthead .site-heading {
 
 header.masthead .page-heading h1,
 header.masthead .site-heading h1 {
-  font-size: 50px;
+  font-size: 65px;
   margin-top: 0;
+
+
 }
 
 header.masthead .page-heading .subheading,
