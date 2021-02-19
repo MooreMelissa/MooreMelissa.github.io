@@ -55,12 +55,70 @@ header.masthead .site-heading {
   color: white;
 }
 
+/* memory game card */
+
+.memory-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    transition: all .5s;
+    transform-style: preserve-3d;
+    transform: scale(1);
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.memory-card:active {
+    transform: scale(1.05);
+    transition: transform .2s;
+
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    background: #FFA101;
+
+}
+
+.front-face
+ {
+    transform: rotateY(180deg);
+}
+
+#replay {
+    font-size: 1.5em;
+    text-align: center;
+    color: #FFA101;
+}
+
 @media only screen and (min-width: 768px) {
   header.masthead .page-heading,
   header.masthead .post-heading,
   header.masthead .site-heading {
     padding: 200px 0;
   }
+
 }
 
 header.masthead .page-heading,
@@ -72,7 +130,7 @@ header.masthead .page-heading h1,
 header.masthead .site-heading h1 {
   font-size: 65px;
   margin-top: 0;
-
+  margin-left: 100px;
 
 }
 
@@ -90,6 +148,7 @@ header.masthead .site-heading .subheading {
   header.masthead .page-heading h1,
   header.masthead .site-heading h1 {
     font-size: 80px;
+
   }
 }
 
