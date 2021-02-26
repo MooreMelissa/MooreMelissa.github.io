@@ -194,3 +194,54 @@ header.masthead .post-heading .meta a {
     font-size: 30px;
   }
 }
+
+/* gallery */
+
+div.flexy {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+div.picture {
+    width: 250px;
+    padding: 10px 10px 20px 10px;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.picture:hover {
+    transition: all 1s ease-in-out;
+    transform: perspective(800px);
+    transform: scale(1.50);
+
+ }
+div.pic1 {
+    float:left;
+    transform: rotate(7deg);
+
+}
+div.pic2 {
+    float:left;
+    transform: rotate(-8deg);
+
+}
+div.pic3 {
+    transform: rotate(7deg);
+}
+div.pic4 {
+    transform: rotate(-8deg);
+}
+div.pic5 {
+    transform: rotate(10deg);
+}
+div.pic6 {
+    transform: rotate(-10deg);
+}
+div.pic7 {
+    transform: rotate(8deg);
+}
+div.pic8 {
+    transform: rotate(15deg);
+}
+
