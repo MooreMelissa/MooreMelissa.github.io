@@ -261,3 +261,25 @@ div.pic8 {
     transform: rotate(15deg);
 }
 
+/* about */
+
+.portrait{
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.portrait div{
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.owner{
+  display: block;
+  width: 10em;
+  height: 10em;
+  border: 5px solid #31525B;
+  border-radius: 50%;
+
+}

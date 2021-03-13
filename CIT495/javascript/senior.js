@@ -1,3 +1,25 @@
+var data = null;
+
+var request = new XMLHttpRequest();
+
+// defining event listener for ready state change event
+request.onreadystatechange = function() {
+
+    if(this.readyState === 4 && this.status === 200) {
+		  console.log(this.responseText);
+          var joke = JSON.parse(this.responseText);
+          document.getElementById("joke").style.cssText = "font-style:italic;font-size:1.0em;color:#FFA101;"
+          document.getElementById("joke").innerHTML = joke;
+     }
+ };
+
+
+request.open("GET", "https://geek-jokes.sameerkumar.website/api");
+request.setRequestHeader("accept", "application/json");
+request.send(data);
+
+
+
 const cards = document.querySelectorAll(".memory-card");
 
 
